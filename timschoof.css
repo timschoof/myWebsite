@@ -1,0 +1,116 @@
+/* basic elements */
+html {
+	margin: 0;
+	padding: 0;
+	}
+
+body {
+    background-color: white; /* background colour of whole page */   
+	overflow-y:scroll; /* scroll bar always present to avoid resizing of webpage when scroll bar is suddenly needed */
+} 
+
+#wrapper {
+	max-width: 80%;
+	margin: 0 auto;
+} /* sort of centers the page */
+
+#header {
+    position: relative;
+    width: auto;
+    height: 80%;
+	display: block;
+}
+
+#sidebar {
+    position: relative;
+	margin: 0 auto;
+	width: auto;
+	display: block;
+}
+
+#main {
+	position: relative;
+	margin: 0 auto;
+	max-width: 80%;
+    overflow: hidden;
+}
+
+h1 {
+	position: absolute;
+	font-family: 'Amatica SC', cursive;
+	color: white;
+	font-size: 3.5vw;
+	text-align: left;
+	top: 58%;
+	left: 12%;
+} /* header 1 */
+
+h2 {
+    font-family: 'Pontano Sans', sans-serif;
+	font-size: large;
+	text-align: left;
+} /* header 2 */
+
+h3 {
+    font-family: 'Pontano Sans', sans-serif;
+	font-size: medium;
+	text-align: left;
+} /* header 2 */
+
+p {
+	font-family: 'Pontano Sans', sans-serif;
+	text-align: justify;
+	font-size: medium;
+} /* paragraphs */
+
+/* navigation bar*/
+ul#navbar {
+	font-family: 'Pontano Sans', sans-serif;
+    list-style-type: none;
+	font-size: medium;
+	margin: 3.5px auto;
+	max-width: 80%;
+	padding: 0;
+	text-align: center;
+} 
+li#navbar {
+	display: inline;
+}
+li#navbar a {
+	padding: 8px;
+	text-decoration: none;
+}
+li#navbar a:hover {
+    background-color: lightgray;
+}
+		
+body#home a#home-nav,
+body#cv a#cv-nav,
+body#research a#research-nav,
+body#publications a#publications-nav,
+body#teaching a#teaching-nav,
+body#blog a#blog-nav,
+body#outside-interests a#outside-interests-nav,
+body#contact a#contact-nav {
+	font-weight:bold;
+}
+
+/* links */
+a:link {
+	color: black;
+}
+a:visited {
+	color: black;
+}
+
+div.fill-screen {
+    position: relative;
+    left: 35%;
+    top: 50%;
+    text-align: center;
+}
+
+img.make-it-fit {
+    max-width: 80%;
+    max-height: 80%;
+}
