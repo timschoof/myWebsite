@@ -63,6 +63,11 @@ p {
 	font-size: medium;
 } /* paragraphs */
 
+li {
+	font-family: 'Pontano Sans', sans-serif;
+	text-align: justify;
+	font-size: medium;
+}
 /* navigation bar*/
 ul#navbar {
 	font-family: 'Pontano Sans', sans-serif;
