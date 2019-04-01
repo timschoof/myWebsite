@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>admin on Tim Schoof</title>
+    <link>/www.timschoof.com/authors/admin/</link>
+    <description>Recent content in admin on Tim Schoof</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="/www.timschoof.com/authors/admin/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>/www.timschoof.com/author/admin/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/www.timschoof.com/author/admin/</guid>
+      <description>I am a Research Associate at the department of Speech, Hearing and Phonetic Sciences at UCL. My research primarily focuses on the question why older adults, with and without hearing loss, experience increased difficulties understanding speech in noise. I am particularly interested in the potential effects of cochlear synaptopathy, or &amp;lsquo;hidden hearing loss&amp;rsquo;, on speech perception. I have also looked at individual differences in hearing aid outcomes using different signal processing strategies.</description>
+    </item>
+    
+  </channel>
+</rss>

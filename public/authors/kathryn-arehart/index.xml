@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kathryn Arehart on Tim Schoof</title>
+    <link>/www.timschoof.com/authors/kathryn-arehart/</link>
+    <description>Recent content in Kathryn Arehart on Tim Schoof</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 01 Feb 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/www.timschoof.com/authors/kathryn-arehart/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Understanding variability in individual response to hearing aid signal processing in wearable hearing aids</title>
+      <link>/www.timschoof.com/publication/earhear2019a/</link>
+      <pubDate>Fri, 01 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/www.timschoof.com/publication/earhear2019a/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The use of self-report measures to examine changes in perception in response to fittings using different signal processing parameters</title>
+      <link>/www.timschoof.com/publication/ija2018/</link>
+      <pubDate>Fri, 02 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/www.timschoof.com/publication/ija2018/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
