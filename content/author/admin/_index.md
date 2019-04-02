@@ -22,6 +22,7 @@ interests:
 - Auditory neuroscience
 - Statistics
 - Data visualisation
+- R
 name: Tim Schoof
 organizations:
 - name: University College London
