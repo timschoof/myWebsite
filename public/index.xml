@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tim Schoof on Tim Schoof</title>
-    <link>/www.timschoof.com/</link>
+    <link>/</link>
     <description>Recent content in Tim Schoof on Tim Schoof</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 01 Jun 2030 13:00:00 +0100</lastBuildDate>
-    <atom:link href="/www.timschoof.com/" rel="self" type="application/rss+xml" />
+    <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Example Talk</title>
-      <link>/www.timschoof.com/talk/example/</link>
+      <link>/talk/example/</link>
       <pubDate>Sat, 01 Jun 2030 13:00:00 +0100</pubDate>
       
-      <guid>/www.timschoof.com/talk/example/</guid>
+      <guid>/talk/example/</guid>
       <description>&lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
     &lt;p&gt;Click on the &lt;strong&gt;Slides&lt;/strong&gt; button above to view the built-in slides feature.&lt;/p&gt;
@@ -36,75 +36,56 @@
     </item>
     
     <item>
-      <title>Plotting audiograms in R</title>
-      <link>/www.timschoof.com/post/plotting-audiograms-in-r/</link>
-      <pubDate>Sun, 31 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/www.timschoof.com/post/plotting-audiograms-in-r/</guid>
-      <description>
-
-
-&lt;p&gt;TL;DR You can download the code on github.&lt;/p&gt;
-&lt;p&gt;First things first, let’s make sure you have all the require R packages installed and loaded.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;if (!require(here)) install.packages(&amp;quot;here&amp;quot;)
-if (!require(tidyverse)) install.packages(&amp;quot;tidyverse&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Let’s start by reading in our data file. We’ll assume that the data file will be in the following format: one row for each participant, whith each column indicating the ear and test frequency.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;data&amp;lt;-read.csv(here(paste(csvFile,&amp;quot;.csv&amp;quot;,sep=&amp;quot;&amp;quot;)),header=T)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;To learn more about pipes, check out this tutorial (Ctrl+Shit+M is the shortcut).&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>Switching streams across ears to evaluate informational masking of speech-on-speech</title>
-      <link>/www.timschoof.com/publication/earhear2019b/</link>
+      <link>/publication/earhear2019b/</link>
       <pubDate>Fri, 01 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>/www.timschoof.com/publication/earhear2019b/</guid>
+      <guid>/publication/earhear2019b/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Understanding variability in individual response to hearing aid signal processing in wearable hearing aids</title>
-      <link>/www.timschoof.com/publication/earhear2019a/</link>
+      <link>/publication/earhear2019a/</link>
       <pubDate>Fri, 01 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>/www.timschoof.com/publication/earhear2019a/</guid>
+      <guid>/publication/earhear2019a/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Modulation of phase-locked neural responses to speech during different arousal states is age-dependent</title>
-      <link>/www.timschoof.com/publication/neuroimage2019/</link>
+      <link>/publication/neuroimage2019/</link>
       <pubDate>Mon, 28 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>/www.timschoof.com/publication/neuroimage2019/</guid>
+      <guid>/publication/neuroimage2019/</guid>
       <description></description>
     </item>
     
     <item>
       <title>The use of self-report measures to examine changes in perception in response to fittings using different signal processing parameters</title>
-      <link>/www.timschoof.com/publication/ija2018/</link>
+      <link>/publication/ija2018/</link>
       <pubDate>Fri, 02 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>/www.timschoof.com/publication/ija2018/</guid>
+      <guid>/publication/ija2018/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Multitasking with typical use of hearing aid noise reduction in older listeners</title>
-      <link>/www.timschoof.com/publication/psyarxiv2018/</link>
+      <link>/publication/psyarxiv2018/</link>
       <pubDate>Mon, 01 Oct 2018 00:00:00 +0100</pubDate>
       
-      <guid>/www.timschoof.com/publication/psyarxiv2018/</guid>
+      <guid>/publication/psyarxiv2018/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Example Page</title>
-      <link>/www.timschoof.com/tutorial/example/</link>
+      <link>/tutorial/example/</link>
       <pubDate>Sun, 09 Sep 2018 00:00:00 +0100</pubDate>
       
-      <guid>/www.timschoof.com/tutorial/example/</guid>
+      <guid>/tutorial/example/</guid>
       <description>
 
 &lt;p&gt;In this tutorial, I&amp;rsquo;ll share my top 10 tips for getting started with Academic:&lt;/p&gt;
@@ -121,29 +102,29 @@ if (!require(tidyverse)) install.packages(&amp;quot;tidyverse&amp;quot;)&lt;/cod
     
     <item>
       <title>Privacy Policy</title>
-      <link>/www.timschoof.com/privacy/</link>
+      <link>/privacy/</link>
       <pubDate>Thu, 28 Jun 2018 00:00:00 +0100</pubDate>
       
-      <guid>/www.timschoof.com/privacy/</guid>
+      <guid>/privacy/</guid>
       <description>&lt;p&gt;&amp;hellip;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Can individual cognitive abilities direct audiology treatment?</title>
-      <link>/www.timschoof.com/publication/audiologytoday2017/</link>
+      <link>/publication/audiologytoday2017/</link>
       <pubDate>Wed, 01 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>/www.timschoof.com/publication/audiologytoday2017/</guid>
+      <guid>/publication/audiologytoday2017/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Enhancing transparency and reproducibility of hearing science</title>
-      <link>/www.timschoof.com/post/enhancing-transparency-and-reproducibility-of-hearing-science/</link>
+      <link>/post/enhancing-transparency-and-reproducibility-of-hearing-science/</link>
       <pubDate>Wed, 22 Feb 2017 00:00:00 +0000</pubDate>
       
-      <guid>/www.timschoof.com/post/enhancing-transparency-and-reproducibility-of-hearing-science/</guid>
+      <guid>/post/enhancing-transparency-and-reproducibility-of-hearing-science/</guid>
       <description>
 
 
@@ -274,10 +255,10 @@ if (!require(tidyverse)) install.packages(&amp;quot;tidyverse&amp;quot;)&lt;/cod
     
     <item>
       <title>Consequences of hidden hearing loss</title>
-      <link>/www.timschoof.com/project/hhl/</link>
+      <link>/project/hhl/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0100</pubDate>
       
-      <guid>/www.timschoof.com/project/hhl/</guid>
+      <guid>/project/hhl/</guid>
       <description>&lt;p&gt;My postdoctoral work at UCL looks at the potential implications of hidden hearing loss. Hidden hearing loss, or cochlear synaptopathy, refers to damage to the synapses connecting the inner hair cells in the cochlea to the auditory nerve. Crucially, this type of damage does not necessarily result in any changes in audiometric thresholds. Animal studies have shown that this damage can arise as a consequence of noise exposure or ageing. While evidence for hidden hearing loss in humans is emerging, it remains challenging to measure non-invasively. In addition, its consequences for auditory processing remain unclear. In particular, we are investigating the effects of hidden hearing loss on auditory temporal processing and speech perception in noise.&lt;/p&gt;
 
 &lt;p&gt;I am also working on a project with &lt;a href=&#34;https://csd.wisc.edu/staff/boothalingam-sriram/&#34; target=&#34;_blank&#34;&gt;Dr Sriram Boothalingam&lt;/a&gt; at the University of Wisconsin-Madison examining whether the auditory efferent system may play a protective role against hidden hearing loss.&lt;/p&gt;
@@ -286,30 +267,39 @@ if (!require(tidyverse)) install.packages(&amp;quot;tidyverse&amp;quot;)&lt;/cod
     
     <item>
       <title>The role of age-related declines in subcortical auditory processing in speech perception in noise</title>
-      <link>/www.timschoof.com/publication/jaro2016/</link>
+      <link>/publication/jaro2016/</link>
       <pubDate>Sat, 01 Oct 2016 00:00:00 +0100</pubDate>
       
-      <guid>/www.timschoof.com/publication/jaro2016/</guid>
+      <guid>/publication/jaro2016/</guid>
       <description></description>
     </item>
     
     <item>
       <title>High sentence predictability increases the fluctuating masker benefit</title>
-      <link>/www.timschoof.com/publication/jasa-el2015/</link>
+      <link>/publication/jasa-el2015/</link>
       <pubDate>Tue, 01 Sep 2015 00:00:00 +0100</pubDate>
       
-      <guid>/www.timschoof.com/publication/jasa-el2015/</guid>
+      <guid>/publication/jasa-el2015/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Individual differences in hearing aid outcomes</title>
-      <link>/www.timschoof.com/project/has/</link>
+      <link>/project/has/</link>
       <pubDate>Fri, 01 May 2015 00:00:00 +0100</pubDate>
       
-      <guid>/www.timschoof.com/project/has/</guid>
+      <guid>/project/has/</guid>
       <description>&lt;p&gt;My postdoctoral work at Northwestern University focused on understanding individual differences that predict hearing aid outcomes, including speech in noise perception, listening effort, and perceived sound quality. Previous laboratory-based studies suggest a link between an individual&amp;rsquo;s susceptibility to signal modification caused by hearing aid processing and cognitive function. I worked on a clinical trial, using commercially available hearing aids, that investigated the effects of signal modification introduced by wide-dynamic range compression speed and frequency compression. We found that hearing aid outcomes relate to individual differences in audiometric thresholds, age, and working memory capacity.&lt;/p&gt;
 </description>
+    </item>
+    
+    <item>
+      <title>The role of auditory and cognitive factors in understanding speech in noise by normal-hearing older listeners</title>
+      <link>/publication/frontiers2014/</link>
+      <pubDate>Wed, 12 Nov 2014 00:00:00 +0000</pubDate>
+      
+      <guid>/publication/frontiers2014/</guid>
+      <description></description>
     </item>
     
   </channel>

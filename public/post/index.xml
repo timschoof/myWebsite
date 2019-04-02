@@ -2,33 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Tim Schoof</title>
-    <link>/www.timschoof.com/post/</link>
+    <link>/post/</link>
     <description>Recent content in Posts on Tim Schoof</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 31 Mar 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 22 Feb 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/www.timschoof.com/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Plotting audiograms in R</title>
-      <link>/www.timschoof.com/post/plotting-audiograms-in-r/</link>
-      <pubDate>Sun, 31 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/www.timschoof.com/post/plotting-audiograms-in-r/</guid>
-      <description>TL;DR You can download the code on github.
-First things first, let’s make sure you have all the require R packages installed and loaded.
-if (!require(here)) install.packages(&amp;quot;here&amp;quot;)if (!require(tidyverse)) install.packages(&amp;quot;tidyverse&amp;quot;)Let’s start by reading in our data file. We’ll assume that the data file will be in the following format: one row for each participant, whith each column indicating the ear and test frequency.
-data&amp;lt;-read.csv(here(paste(csvFile,&amp;quot;.csv&amp;quot;,sep=&amp;quot;&amp;quot;)),header=T)To learn more about pipes, check out this tutorial (Ctrl+Shit+M is the shortcut).</description>
-    </item>
     
     <item>
       <title>Enhancing transparency and reproducibility of hearing science</title>
-      <link>/www.timschoof.com/post/enhancing-transparency-and-reproducibility-of-hearing-science/</link>
+      <link>/post/enhancing-transparency-and-reproducibility-of-hearing-science/</link>
       <pubDate>Wed, 22 Feb 2017 00:00:00 +0000</pubDate>
       
-      <guid>/www.timschoof.com/post/enhancing-transparency-and-reproducibility-of-hearing-science/</guid>
+      <guid>/post/enhancing-transparency-and-reproducibility-of-hearing-science/</guid>
       <description>This work was presented as a poster at the American Auditory Society’s Annual Scientific and Technology Conference, 2-4 March 2017, Scottsdale, AZ. You can download a copy of the poster here.
 The National Institutes of Health have recently undertaken steps to enhance rigor and reproducibility of biomedical research. For example, grant applications are now required to explicitly address how the proposed research will achieve robust and unbiased results. Reproducibility is an integral part of science as it allows for research findings to be either validated or refuted and lets scientists successfully build upon previous research.</description>
     </item>

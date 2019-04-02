@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Lauren Balmert on Tim Schoof</title>
-    <link>/www.timschoof.com/authors/lauren-balmert/</link>
+    <link>/authors/lauren-balmert/</link>
     <description>Recent content in Lauren Balmert on Tim Schoof</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 01 Feb 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/www.timschoof.com/authors/lauren-balmert/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/authors/lauren-balmert/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Understanding variability in individual response to hearing aid signal processing in wearable hearing aids</title>
-      <link>/www.timschoof.com/publication/earhear2019a/</link>
+      <link>/publication/earhear2019a/</link>
       <pubDate>Fri, 01 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>/www.timschoof.com/publication/earhear2019a/</guid>
+      <guid>/publication/earhear2019a/</guid>
       <description></description>
     </item>
     
