@@ -1,0 +1,232 @@
+---
+title: Plotting audiograms in R
+author: ''
+date: '2019-04-08'
+slug: plotting-audiograms-in-r
+categories: []
+tags: []
+active: false
+image:
+  caption: ''
+  focal_point: ''
+---
+
+If you're involved in hearing science, chances are you're plotting audiogram data for most of your publications. So why not write some code to make those plots and automate the process? Here I'll walk you through some R code that you could use and/or adapt to plot your audiogram data.
+
+## Getting ready
+![](https://media.giphy.com/media/26gsrnofq3K6WuETu/giphy.gif){width=300px}
+<br/><br/>
+
+First things first, let's make sure you have all the require R packages installed and loaded. 
+```{r message = FALSE, warning = FALSE}
+if (!require(here)) install.packages("here")
+if (!require(tidyverse)) install.packages("tidyverse")
+```
+
+Next, let's read in our data file. I'm going to assume that you have saved your data in a .csv file in the following format: one row per participant, with one column with participant IDs, perhaps another one indicating participant group, and the other columns indicating test ear and frequency. In other words, I'm assuming your data is in wide format.
+```{r eval = FALSE}
+data<-read.csv(here(paste(csvFile,".csv",sep="")),header=T)
+```
+```{r include = FALSE}
+data<-read.csv("audiograms/ExampleData.csv",header=T)
+```
+```{r echo = FALSE, results = 'asis'}
+library(knitr)
+kable(data[1:3,])
+```
+
+The `here` package is pretty neat. It helps you avoid having to specify your working directory, and other file paths that are specific to your local computer. It makes the code more likely to work on someone else computer without them having to go through your code and changing all the hard-coded file paths that might be lurking around in there. Also, I don't want Jenny Bryan to [set my computer on fire](https://www.tidyverse.org/articles/2017/12/workflow-vs-script/), so there's that.
+
+## Cleaning your data
+
+![](https://media.giphy.com/media/BW5OaeGBHVBf2/giphy.gif){width=300px}
+<br/><br/>
+
+To make things easier for ourselves when plotting the data, we'll need to transform our data from wide to long format. We'll want one column for participant IDs, perhaps another one indicating the participant group, test ear, test frequency, and audiometric threshold (in dB HL). 
+
+```{r}
+if("group" %in% colnames(data)){
+  long_data <- gather(data, key = "ear-freq", value = "dB",-participant,-group)
+} else {
+  long_data <- gather(data, key = "ear-freq", value = "dB",-participant)
+}
+```
+
+Here I'm using the `gather` function to reshape our dataset from wide to long format. We're leaving the participant and, if it exists, the group columns more or less untouched. All the other columns will be gathered up and the values will be dropped into the dB column and the column names (i.e. the keys) will be dropped into the `ear-freq` column. The output of all of this is assigned to a new variable, `long_data`.
+
+```{r echo = FALSE, results = 'asis'}
+library(knitr)
+kable(long_data[1:3,])
+```
+
+We still have a bit of cleaning up to do! 
+
+```{r}
+d <- long_data %>% 
+  separate(col = "ear-freq", into = c("ear","freq"), sep = (1))
+```
+
+Here I'm taking the `long_data` we just created and I'm "[piping](https://cran.r-project.org/web/packages/magrittr/vignettes/magrittr.html)" or feeding it into the `separate` function. This line of code splits the "ear-freq" column into two separate columns, indicating the test ear and frequency. Note that here I'm assuming that the `ear-freq` column name in your data file can be split into two by simply taking the first character (`sep = (1)`) and separating it from the other characters in the column name. That will work in our example data set, where an example column name is `R500`, but won't work if you're using a different coding system (e.g. `Right500` or `500R`). You may need to use some fancy regular expressions in that case to split your columns. 
+
+```{r echo = FALSE, results = 'asis'}
+library(knitr)
+kable(d[1:3,])
+```
+
+Let's extend this bit of code and continue cleaning. 
+
+```{r}
+d <- long_data %>% 
+  separate(col = "ear-freq", into = c("ear","freq"), sep = (1)) %>%
+  mutate(freq = (type.convert(freq))/1000) %>% 
+  mutate(freqLabels = formatC(freq, format="g")) 
+```
+
+Next, I'm 'mutating', or transforming, the data a bit further. I'm taking the values in the `freq` column and converting them to kHz by dividing the values by 1000. A funny thing happens. Our values have trailing zeros (e.g. 8.00 kHz). That would look a bit silly in our figure. So, let's create a new column that contains the exact same values, but without any trailing zeros. The `formatC` function turns our numeric values into characters, so we'll just use this column for our axis tick labels when we plot our data. 
+
+The only thing left to clean is our `ear` column. We're simply turning this column into a factor and changing 'R' to 'Right' and 'L' to 'Left'. 
+
+```{r}
+d <- long_data %>% 
+  separate(col = "ear-freq", into = c("ear","freq"), sep = (1)) %>%
+  mutate(freq = (type.convert(freq))/1000) %>% 
+  mutate(freqLabels = formatC(freq, format="g")) %>% 
+  mutate(ear = factor(ear, levels = c("R", "L"))) %>%
+  mutate(ear = recode(ear, "R" = "Right", "L" = "Left")) 
+```
+
+```{r echo = FALSE, results = 'asis'}
+library(knitr)
+kable(d[1:3,])
+```
+
+## Different groups
+
+Imagine you have an experimental group of, say, older adults with age-related hearing loss, and a control group of young university students. In this case, the hearing thresholds of the individuals in the control group are not necessarily all that interesting. Probably all you want to do is just plot the range of thresholds of the people you included. For the experimental group, on the other hand, I'd like to argue that it's very important to show the thresholds of all individuals you included in the study, rather than just showing group means and standard deviations.
+
+Since we'll be plotting the data for our experimental and control groups somewhat differently, it's easiest to just create two different subsets of the data. 
+
+![](https://media.giphy.com/media/n3yj8LpjbzRC0/giphy.gif){width=300px}
+<br/><br/>
+
+```{r}
+# Experimental group
+patient <- d %>%
+  subset(group %in% "patient")
+
+# Control group
+control <- d %>%
+  subset(group %in% "control") %>% 
+  group_by(freq, ear) %>% 
+  summarize(mindB = min(dB), maxdB = max(dB)) %>% 
+  gather(key = "MinMax", value = "dB",-freq, -ear)
+```
+
+For the control group, we need to do a little bit more.  We need to compute the minimum and maximum thresholds for each frequency to be able to plot the range. Let's extend our code as follows:
+
+```{r}
+# Control group
+control <- d %>%
+  subset(group %in% "control") %>% 
+  group_by(freq, ear) %>% 
+  summarize(mindB = min(dB), maxdB = max(dB)) %>% 
+  gather(key = "MinMax", value = "dB",-freq, -ear)
+```
+
+Here I am grouping the data by frequency and ear. It's a little bit as if I'm taking subsets of the data, but it allows me to do the same computation on each of these subsets simultaneously. Next, I'm computing some summary statistics - the minimum and maximum - on the data for each ear and frequency combination separately. The last thing I need to do is make sure the data is in a long format, so we'll use `gather` again here. We'll end up with a frequency, ear, and dB column, as well as a min-max column that indicates whether the dB value is the minimum or maximum threshold within the group. 
+
+## Plotting
+
+Finally, we're ready to plot some data!
+
+![](https://media.giphy.com/media/8fen5LSZcHQ5O/giphy.gif){width=300px}
+<br/><br/>
+  
+```{r}
+ggplot()+
+  facet_grid(. ~ ear) +
+  geom_line(data = patient, aes(x=freq, y=dB, group=participant))+
+  stat_summary(data = patient,
+               aes(x=freq, y=dB,group=ear), 
+               fun.y=mean, 
+               geom="line", lwd = 1.5)
+```
+
+We'll be using `ggplot` to plot our data. This bit of code creates two subplots, one for each ear, using the `facet_grid` function. It then creates a line plot for the experimental group's data (the 'patient' subset), with frequency along the x-axis, thresholds (dB HL) along the y-axis, and an individual line for each participant (`group = participant`). In addition, using the `stat_summary` function, we're able to plot a thicker line (`geom = line, lwd = 1.5`) showing the mean for the group (`fun.y = mean`).
+
+Next, let's add the control group's data to that.
+
+```{r}
+ggplot()+
+  facet_grid(. ~ ear) +
+  geom_line(data = patient, aes(x=freq, y=dB, group=participant))+
+  stat_summary(data = patient,
+               aes(x=freq, y=dB,group=ear), 
+               fun.y=mean, 
+               geom="line", lwd = 1.5)+
+  geom_area(data = control, aes(x=freq, y=dB, group=MinMax),fill="grey", alpha=.7)
+```
+
+
+To create a shaded area, we'll need to use the `geom_area` function. We're specifying that we're using the control group's data. Our 'group' here corresponds to the 'MinMax' column, which just indicates whether the dB value is the upper or lower boundaries of our shaded area. The shaded area will be plotted in grey, with 70% transparency (`alpha = .7`). 
+
+The graph doesn't quite look ready for publication... 
+
+```{r}
+ggplot()+
+  facet_grid(. ~ ear) +
+  geom_line(data = patient, aes(x=freq, y=dB, group=participant))+
+  stat_summary(data = patient,
+               aes(x=freq, y=dB,group=ear), 
+               fun.y=mean, 
+               geom="line", lwd = 1.5)+ 
+  geom_area(data = control, aes(x=freq, y=dB, group=MinMax),
+              fill="grey", alpha=.7)+ 
+  scale_y_reverse(limits = c(100,-10), breaks = seq(-10, 100, by=10))+
+  scale_x_log10(breaks = unique(d$freq), labels = unique(d$freqLabels))+
+  theme_bw()
+```
+
+The `scale_y_reverse` function does what it says on the tin, it flips the y-axis so that negative values are up and positive values are down. I've set the axis limits to to -10 and 100, and the ticks (or `breaks`) from -10 to 100, every 10 dB. 
+The `scale_x_log10` function makes sure that our x-axis is on a log scale. I'm using the `freq` column to specify where the tick marks should. In addition I am using the `freqLabels` column to specify the labels for the tick marks (to show our kHz values without trailing zeros).
+
+For comparison, here's what it would look like without using the `freqLabels` column to specify the labels for the tick marks.
+
+```{r echo = FALSE}
+ggplot()+
+  facet_grid(. ~ ear) +
+  geom_line(data = patient, aes(x=freq, y=dB, group=participant))+
+  stat_summary(data = patient,
+               aes(x=freq, y=dB,group=ear), 
+               fun.y=mean, 
+               geom="line", lwd = 1.5)+ 
+  geom_area(data = control, aes(x=freq, y=dB, group=MinMax),
+              fill="grey", alpha=.7)+ 
+  scale_y_reverse(limits = c(100,-10), breaks = seq(-10, 100, by=10))+
+  scale_x_log10(breaks = unique(d$freq))+
+  theme_bw()
+```
+
+All that's left to do now is add some axis labels and change the font size here and there. 
+```{r}
+ggplot()+
+  facet_grid(. ~ ear) +
+  geom_line(data = patient, aes(x=freq, y=dB, group=participant))+
+  stat_summary(data = patient,
+               aes(x=freq, y=dB,group=ear), 
+               fun.y=mean, 
+               geom="line", lwd = 1.5)+ 
+  geom_area(data = control, aes(x=freq, y=dB, group=MinMax),
+              fill="grey", alpha=.7)+ 
+  scale_y_reverse(limits = c(100,-10), breaks = seq(-10, 100, by=10))+
+  scale_x_log10(breaks =unique(d$freq), labels = unique(d$freqLabels))+
+  theme_bw()+
+  theme(axis.text=element_text(size=12),
+        axis.title=element_text(size=14),
+        strip.text.x = element_text(size = 12))+
+  labs(x = "Frequency (kHz)", y = "Threshold (dB HL)")
+```
+
+Your audiogram figure is ready for publication! 
+
+#### The code (with some more practical instructions on how to run it) is available on [my github page](https://github.com/timschoof/PlotAudiogram). 

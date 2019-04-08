@@ -24,13 +24,12 @@
   
     
   
-  <meta name="description" content="TL;DR You can download the code on github.
-First things first, let’s make sure you have all the require R packages installed and loaded.
-if (!require(here)) install.packages(&quot;here&quot;)if (!require(tidyverse)) install.packages(&quot;tidyverse&quot;)Let’s start by reading in our data file. We’ll assume that the data file will be in the following format: one row for each participant, whith each column indicating the ear and test frequency.
-data&lt;-read.csv(here(paste(csvFile,&quot;.csv&quot;,sep=&quot;&quot;)),header=T)To learn more about pipes, check out this tutorial (Ctrl&#43;Shit&#43;M is the shortcut).">
+  <meta name="description" content="If you’re involved in hearing science, chances are you’re plotting audiogram data for most of your publications. So why not write some code to make those plots and automate the process? Here I’ll walk you through some R code that you could use and/or adapt to plot your audiogram data.
+Getting ready
+First things first, let’s make sure you have all the require R packages installed and loaded.">
 
   
-  <link rel="alternate" hreflang="en-us" href="/www.timschoof.com/post/plotting-audiograms-in-r/">
+  <link rel="alternate" hreflang="en-us" href="/post/plotting-audiograms-in-r/">
 
   
 
@@ -89,7 +88,7 @@ data&lt;-read.csv(here(paste(csvFile,&quot;.csv&quot;,sep=&quot;&quot;)),header=
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono">
   
 
-  <link rel="stylesheet" href="/www.timschoof.com/styles.css">
+  <link rel="stylesheet" href="/styles.css">
   
 
   
@@ -111,15 +110,15 @@ data&lt;-read.csv(here(paste(csvFile,&quot;.csv&quot;,sep=&quot;&quot;)),header=
   
 
   
-  <link rel="alternate" href="/www.timschoof.com/index.xml" type="application/rss+xml" title="Tim Schoof">
-  <link rel="feed" href="/www.timschoof.com/index.xml" type="application/rss+xml" title="Tim Schoof">
+  <link rel="alternate" href="/index.xml" type="application/rss+xml" title="Tim Schoof">
+  <link rel="feed" href="/index.xml" type="application/rss+xml" title="Tim Schoof">
   
 
-  <link rel="manifest" href="/www.timschoof.com/site.webmanifest">
-  <link rel="icon" type="image/png" href="/www.timschoof.com/img/icon.png">
-  <link rel="apple-touch-icon" type="image/png" href="/www.timschoof.com/img/icon-192.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-  <link rel="canonical" href="/www.timschoof.com/post/plotting-audiograms-in-r/">
+  <link rel="canonical" href="/post/plotting-audiograms-in-r/">
 
   
   
@@ -131,17 +130,16 @@ data&lt;-read.csv(here(paste(csvFile,&quot;.csv&quot;,sep=&quot;&quot;)),header=
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Tim Schoof">
-  <meta property="og:url" content="/www.timschoof.com/post/plotting-audiograms-in-r/">
+  <meta property="og:url" content="/post/plotting-audiograms-in-r/">
   <meta property="og:title" content="Plotting audiograms in R | Tim Schoof">
-  <meta property="og:description" content="TL;DR You can download the code on github.
-First things first, let’s make sure you have all the require R packages installed and loaded.
-if (!require(here)) install.packages(&quot;here&quot;)if (!require(tidyverse)) install.packages(&quot;tidyverse&quot;)Let’s start by reading in our data file. We’ll assume that the data file will be in the following format: one row for each participant, whith each column indicating the ear and test frequency.
-data&lt;-read.csv(here(paste(csvFile,&quot;.csv&quot;,sep=&quot;&quot;)),header=T)To learn more about pipes, check out this tutorial (Ctrl&#43;Shit&#43;M is the shortcut)."><meta property="og:image" content="/www.timschoof.com/img/icon-192.png">
+  <meta property="og:description" content="If you’re involved in hearing science, chances are you’re plotting audiogram data for most of your publications. So why not write some code to make those plots and automate the process? Here I’ll walk you through some R code that you could use and/or adapt to plot your audiogram data.
+Getting ready
+First things first, let’s make sure you have all the require R packages installed and loaded."><meta property="og:image" content="/img/icon-192.png">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2019-03-31T00:00:00&#43;00:00">
+  <meta property="article:published_time" content="2019-04-08T00:00:00&#43;00:00">
   
-  <meta property="article:modified_time" content="2019-03-31T00:00:00&#43;00:00">
+  <meta property="article:modified_time" content="2019-04-08T00:00:00&#43;00:00">
   
 
   
@@ -187,7 +185,7 @@ data&lt;-read.csv(here(paste(csvFile,&quot;.csv&quot;,sep=&quot;&quot;)),header=
   <div class="container">
 
     
-      <a class="navbar-brand" href="/www.timschoof.com/">Tim Schoof</a>
+      <a class="navbar-brand" href="/">Tim Schoof</a>
       
       <button type="button" class="navbar-toggler" data-toggle="collapse"
               data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -212,7 +210,7 @@ data&lt;-read.csv(here(paste(csvFile,&quot;.csv&quot;,sep=&quot;&quot;)),header=
         
 
         <li class="nav-item">
-          <a class="nav-link" href="/www.timschoof.com/#about">
+          <a class="nav-link" href="/#about">
             
             <span>Home</span>
             
@@ -231,7 +229,7 @@ data&lt;-read.csv(here(paste(csvFile,&quot;.csv&quot;,sep=&quot;&quot;)),header=
         
 
         <li class="nav-item">
-          <a class="nav-link" href="/www.timschoof.com/#projects">
+          <a class="nav-link" href="/#projects">
             
             <span>Research</span>
             
@@ -250,7 +248,7 @@ data&lt;-read.csv(here(paste(csvFile,&quot;.csv&quot;,sep=&quot;&quot;)),header=
         
 
         <li class="nav-item">
-          <a class="nav-link" href="/www.timschoof.com/#featured">
+          <a class="nav-link" href="/#publications">
             
             <span>Publications</span>
             
@@ -269,7 +267,7 @@ data&lt;-read.csv(here(paste(csvFile,&quot;.csv&quot;,sep=&quot;&quot;)),header=
         
 
         <li class="nav-item">
-          <a class="nav-link" href="/www.timschoof.com/#posts">
+          <a class="nav-link" href="/#posts">
             
             <span>Blog</span>
             
@@ -288,7 +286,7 @@ data&lt;-read.csv(here(paste(csvFile,&quot;.csv&quot;,sep=&quot;&quot;)),header=
         
 
         <li class="nav-item">
-          <a class="nav-link" href="/www.timschoof.com/#contact">
+          <a class="nav-link" href="/#contact">
             
             <span>Contact</span>
             
@@ -307,7 +305,7 @@ data&lt;-read.csv(here(paste(csvFile,&quot;.csv&quot;,sep=&quot;&quot;)),header=
         
 
         <li class="nav-item">
-          <a class="nav-link" href="/www.timschoof.com/files/cv.pdf">
+          <a class="nav-link" href="/files/cv.pdf">
             
             <span>CV</span>
             
@@ -371,8 +369,8 @@ data&lt;-read.csv(here(paste(csvFile,&quot;.csv&quot;,sep=&quot;&quot;)),header=
 
 
 
-<meta content="2019-03-31 00:00:00 &#43;0000 UTC" itemprop="datePublished">
-<meta content="2019-03-31 00:00:00 &#43;0000 UTC" itemprop="dateModified">
+<meta content="2019-04-08 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+<meta content="2019-04-08 00:00:00 &#43;0000 UTC" itemprop="dateModified">
 
 <div class="article-metadata">
 
@@ -385,7 +383,7 @@ data&lt;-read.csv(here(paste(csvFile,&quot;.csv&quot;,sep=&quot;&quot;)),header=
     
       
     
-    <time>31 March 2019</time>
+    <time>8 April 2019</time>
   </span>
   
 
@@ -394,7 +392,7 @@ data&lt;-read.csv(here(paste(csvFile,&quot;.csv&quot;,sep=&quot;&quot;)),header=
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    1 min read
+    8 min read
   </span>
   
 
@@ -437,13 +435,305 @@ data&lt;-read.csv(here(paste(csvFile,&quot;.csv&quot;,sep=&quot;&quot;)),header=
       
 
 
-<p>TL;DR You can download the code on github.</p>
+<p>If you’re involved in hearing science, chances are you’re plotting audiogram data for most of your publications. So why not write some code to make those plots and automate the process? Here I’ll walk you through some R code that you could use and/or adapt to plot your audiogram data.</p>
+<div id="getting-ready" class="section level2">
+<h2>Getting ready</h2>
+<p><img src="https://media.giphy.com/media/26gsrnofq3K6WuETu/giphy.gif" width="300" /> <br/><br/></p>
 <p>First things first, let’s make sure you have all the require R packages installed and loaded.</p>
 <pre class="r"><code>if (!require(here)) install.packages(&quot;here&quot;)
 if (!require(tidyverse)) install.packages(&quot;tidyverse&quot;)</code></pre>
-<p>Let’s start by reading in our data file. We’ll assume that the data file will be in the following format: one row for each participant, whith each column indicating the ear and test frequency.</p>
+<p>Next, let’s read in our data file. I’m going to assume that you have saved your data in a .csv file in the following format: one row per participant, with one column with participant IDs, perhaps another one indicating participant group, and the other columns indicating test ear and frequency. In other words, I’m assuming your data is in wide format.</p>
 <pre class="r"><code>data&lt;-read.csv(here(paste(csvFile,&quot;.csv&quot;,sep=&quot;&quot;)),header=T)</code></pre>
-<p>To learn more about pipes, check out this tutorial (Ctrl+Shit+M is the shortcut).</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">participant</th>
+<th align="left">group</th>
+<th align="right">R250</th>
+<th align="right">R500</th>
+<th align="right">R1000</th>
+<th align="right">R2000</th>
+<th align="right">R4000</th>
+<th align="right">R8000</th>
+<th align="right">L250</th>
+<th align="right">L500</th>
+<th align="right">L1000</th>
+<th align="right">L2000</th>
+<th align="right">L4000</th>
+<th align="right">L8000</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">P01</td>
+<td align="left">patient</td>
+<td align="right">40</td>
+<td align="right">40</td>
+<td align="right">50</td>
+<td align="right">55</td>
+<td align="right">55</td>
+<td align="right">95</td>
+<td align="right">30</td>
+<td align="right">30</td>
+<td align="right">35</td>
+<td align="right">40</td>
+<td align="right">70</td>
+<td align="right">80</td>
+</tr>
+<tr class="even">
+<td align="left">P02</td>
+<td align="left">patient</td>
+<td align="right">40</td>
+<td align="right">30</td>
+<td align="right">40</td>
+<td align="right">60</td>
+<td align="right">65</td>
+<td align="right">45</td>
+<td align="right">25</td>
+<td align="right">25</td>
+<td align="right">30</td>
+<td align="right">35</td>
+<td align="right">65</td>
+<td align="right">45</td>
+</tr>
+<tr class="odd">
+<td align="left">P03</td>
+<td align="left">patient</td>
+<td align="right">20</td>
+<td align="right">20</td>
+<td align="right">20</td>
+<td align="right">35</td>
+<td align="right">25</td>
+<td align="right">85</td>
+<td align="right">15</td>
+<td align="right">25</td>
+<td align="right">35</td>
+<td align="right">55</td>
+<td align="right">75</td>
+<td align="right">80</td>
+</tr>
+</tbody>
+</table>
+<p>The <code>here</code> package is pretty neat. It helps you avoid having to specify your working directory, and other file paths that are specific to your local computer. It makes the code more likely to work on someone else computer without them having to go through your code and changing all the hard-coded file paths that might be lurking around in there. Also, I don’t want Jenny Bryan to <a href="https://www.tidyverse.org/articles/2017/12/workflow-vs-script/">set my computer on fire</a>, so there’s that.</p>
+</div>
+<div id="cleaning-your-data" class="section level2">
+<h2>Cleaning your data</h2>
+<p><img src="https://media.giphy.com/media/BW5OaeGBHVBf2/giphy.gif" width="300" /> <br/><br/></p>
+<p>To make things easier for ourselves when plotting the data, we’ll need to transform our data from wide to long format. We’ll want one column for participant IDs, perhaps another one indicating the participant group, test ear, test frequency, and audiometric threshold (in dB HL).</p>
+<pre class="r"><code>if(&quot;group&quot; %in% colnames(data)){
+  long_data &lt;- gather(data, key = &quot;ear-freq&quot;, value = &quot;dB&quot;,-participant,-group)
+} else {
+  long_data &lt;- gather(data, key = &quot;ear-freq&quot;, value = &quot;dB&quot;,-participant)
+}</code></pre>
+<p>Here I’m using the <code>gather</code> function to reshape our dataset from wide to long format. We’re leaving the participant and, if it exists, the group columns more or less untouched. All the other columns will be gathered up and the values will be dropped into the dB column and the column names (i.e. the keys) will be dropped into the <code>ear-freq</code> column. The output of all of this is assigned to a new variable, <code>long_data</code>.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">participant</th>
+<th align="left">group</th>
+<th align="left">ear-freq</th>
+<th align="right">dB</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">P01</td>
+<td align="left">patient</td>
+<td align="left">R250</td>
+<td align="right">40</td>
+</tr>
+<tr class="even">
+<td align="left">P02</td>
+<td align="left">patient</td>
+<td align="left">R250</td>
+<td align="right">40</td>
+</tr>
+<tr class="odd">
+<td align="left">P03</td>
+<td align="left">patient</td>
+<td align="left">R250</td>
+<td align="right">20</td>
+</tr>
+</tbody>
+</table>
+<p>We still have a bit of cleaning up to do!</p>
+<pre class="r"><code>d &lt;- long_data %&gt;% 
+  separate(col = &quot;ear-freq&quot;, into = c(&quot;ear&quot;,&quot;freq&quot;), sep = (1))</code></pre>
+<p>Here I’m taking the <code>long_data</code> we just created and I’m “<a href="https://cran.r-project.org/web/packages/magrittr/vignettes/magrittr.html">piping</a>” or feeding it into the <code>separate</code> function. This line of code splits the “ear-freq” column into two separate columns, indicating the test ear and frequency. Note that here I’m assuming that the <code>ear-freq</code> column name in your data file can be split into two by simply taking the first character (<code>sep = (1)</code>) and separating it from the other characters in the column name. That will work in our example data set, where an example column name is <code>R500</code>, but won’t work if you’re using a different coding system (e.g. <code>Right500</code> or <code>500R</code>). You may need to use some fancy regular expressions in that case to split your columns.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">participant</th>
+<th align="left">group</th>
+<th align="left">ear</th>
+<th align="left">freq</th>
+<th align="right">dB</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">P01</td>
+<td align="left">patient</td>
+<td align="left">R</td>
+<td align="left">250</td>
+<td align="right">40</td>
+</tr>
+<tr class="even">
+<td align="left">P02</td>
+<td align="left">patient</td>
+<td align="left">R</td>
+<td align="left">250</td>
+<td align="right">40</td>
+</tr>
+<tr class="odd">
+<td align="left">P03</td>
+<td align="left">patient</td>
+<td align="left">R</td>
+<td align="left">250</td>
+<td align="right">20</td>
+</tr>
+</tbody>
+</table>
+<p>Let’s extend this bit of code and continue cleaning.</p>
+<pre class="r"><code>d &lt;- long_data %&gt;% 
+  separate(col = &quot;ear-freq&quot;, into = c(&quot;ear&quot;,&quot;freq&quot;), sep = (1)) %&gt;%
+  mutate(freq = (type.convert(freq))/1000) %&gt;% 
+  mutate(freqLabels = formatC(freq, format=&quot;g&quot;)) </code></pre>
+<p>Next, I’m ‘mutating’, or transforming, the data a bit further. I’m taking the values in the <code>freq</code> column and converting them to kHz by dividing the values by 1000. A funny thing happens. Our values have trailing zeros (e.g. 8.00 kHz). That would look a bit silly in our figure. So, let’s create a new column that contains the exact same values, but without any trailing zeros. The <code>formatC</code> function turns our numeric values into characters, so we’ll just use this column for our axis tick labels when we plot our data.</p>
+<p>The only thing left to clean is our <code>ear</code> column. We’re simply turning this column into a factor and changing ‘R’ to ‘Right’ and ‘L’ to ‘Left’.</p>
+<pre class="r"><code>d &lt;- long_data %&gt;% 
+  separate(col = &quot;ear-freq&quot;, into = c(&quot;ear&quot;,&quot;freq&quot;), sep = (1)) %&gt;%
+  mutate(freq = (type.convert(freq))/1000) %&gt;% 
+  mutate(freqLabels = formatC(freq, format=&quot;g&quot;)) %&gt;% 
+  mutate(ear = factor(ear, levels = c(&quot;R&quot;, &quot;L&quot;))) %&gt;%
+  mutate(ear = recode(ear, &quot;R&quot; = &quot;Right&quot;, &quot;L&quot; = &quot;Left&quot;)) </code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="left">participant</th>
+<th align="left">group</th>
+<th align="left">ear</th>
+<th align="right">freq</th>
+<th align="right">dB</th>
+<th align="left">freqLabels</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">P01</td>
+<td align="left">patient</td>
+<td align="left">Right</td>
+<td align="right">0.25</td>
+<td align="right">40</td>
+<td align="left">0.25</td>
+</tr>
+<tr class="even">
+<td align="left">P02</td>
+<td align="left">patient</td>
+<td align="left">Right</td>
+<td align="right">0.25</td>
+<td align="right">40</td>
+<td align="left">0.25</td>
+</tr>
+<tr class="odd">
+<td align="left">P03</td>
+<td align="left">patient</td>
+<td align="left">Right</td>
+<td align="right">0.25</td>
+<td align="right">20</td>
+<td align="left">0.25</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="different-groups" class="section level2">
+<h2>Different groups</h2>
+<p>Imagine you have an experimental group of, say, older adults with age-related hearing loss, and a control group of young university students. In this case, the hearing thresholds of the individuals in the control group are not necessarily all that interesting. Probably all you want to do is just plot the range of thresholds of the people you included. For the experimental group, on the other hand, I’d like to argue that it’s very important to show the thresholds of all individuals you included in the study, rather than just showing group means and standard deviations.</p>
+<p>Since we’ll be plotting the data for our experimental and control groups somewhat differently, it’s easiest to just create two different subsets of the data.</p>
+<p><img src="https://media.giphy.com/media/n3yj8LpjbzRC0/giphy.gif" width="300" /> <br/><br/></p>
+<pre class="r"><code># Experimental group
+patient &lt;- d %&gt;%
+  subset(group %in% &quot;patient&quot;)
+
+# Control group
+control &lt;- d %&gt;%
+  subset(group %in% &quot;control&quot;) %&gt;% 
+  group_by(freq, ear) %&gt;% 
+  summarize(mindB = min(dB), maxdB = max(dB)) %&gt;% 
+  gather(key = &quot;MinMax&quot;, value = &quot;dB&quot;,-freq, -ear)</code></pre>
+<p>For the control group, we need to do a little bit more. We need to compute the minimum and maximum thresholds for each frequency to be able to plot the range. Let’s extend our code as follows:</p>
+<pre class="r"><code># Control group
+control &lt;- d %&gt;%
+  subset(group %in% &quot;control&quot;) %&gt;% 
+  group_by(freq, ear) %&gt;% 
+  summarize(mindB = min(dB), maxdB = max(dB)) %&gt;% 
+  gather(key = &quot;MinMax&quot;, value = &quot;dB&quot;,-freq, -ear)</code></pre>
+<p>Here I am grouping the data by frequency and ear. It’s a little bit as if I’m taking subsets of the data, but it allows me to do the same computation on each of these subsets simultaneously. Next, I’m computing some summary statistics - the minimum and maximum - on the data for each ear and frequency combination separately. The last thing I need to do is make sure the data is in a long format, so we’ll use <code>gather</code> again here. We’ll end up with a frequency, ear, and dB column, as well as a min-max column that indicates whether the dB value is the minimum or maximum threshold within the group.</p>
+</div>
+<div id="plotting" class="section level2">
+<h2>Plotting</h2>
+<p>Finally, we’re ready to plot some data!</p>
+<p><img src="https://media.giphy.com/media/8fen5LSZcHQ5O/giphy.gif" width="300" /> <br/><br/></p>
+<pre class="r"><code>ggplot()+
+  facet_grid(. ~ ear) +
+  geom_line(data = patient, aes(x=freq, y=dB, group=participant))+
+  stat_summary(data = patient,
+               aes(x=freq, y=dB,group=ear), 
+               fun.y=mean, 
+               geom=&quot;line&quot;, lwd = 1.5)</code></pre>
+<p><img src="/post/2019-04-08-plotting-audiograms-in-r_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<p>We’ll be using <code>ggplot</code> to plot our data. This bit of code creates two subplots, one for each ear, using the <code>facet_grid</code> function. It then creates a line plot for the experimental group’s data (the ‘patient’ subset), with frequency along the x-axis, thresholds (dB HL) along the y-axis, and an individual line for each participant (<code>group = participant</code>). In addition, using the <code>stat_summary</code> function, we’re able to plot a thicker line (<code>geom = line, lwd = 1.5</code>) showing the mean for the group (<code>fun.y = mean</code>).</p>
+<p>Next, let’s add the control group’s data to that.</p>
+<pre class="r"><code>ggplot()+
+  facet_grid(. ~ ear) +
+  geom_line(data = patient, aes(x=freq, y=dB, group=participant))+
+  stat_summary(data = patient,
+               aes(x=freq, y=dB,group=ear), 
+               fun.y=mean, 
+               geom=&quot;line&quot;, lwd = 1.5)+
+  geom_area(data = control, aes(x=freq, y=dB, group=MinMax),fill=&quot;grey&quot;, alpha=.7)</code></pre>
+<p><img src="/post/2019-04-08-plotting-audiograms-in-r_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+<p>To create a shaded area, we’ll need to use the <code>geom_area</code> function. We’re specifying that we’re using the control group’s data. Our ‘group’ here corresponds to the ‘MinMax’ column, which just indicates whether the dB value is the upper or lower boundaries of our shaded area. The shaded area will be plotted in grey, with 70% transparency (<code>alpha = .7</code>).</p>
+<p>The graph doesn’t quite look ready for publication…</p>
+<pre class="r"><code>ggplot()+
+  facet_grid(. ~ ear) +
+  geom_line(data = patient, aes(x=freq, y=dB, group=participant))+
+  stat_summary(data = patient,
+               aes(x=freq, y=dB,group=ear), 
+               fun.y=mean, 
+               geom=&quot;line&quot;, lwd = 1.5)+ 
+  geom_area(data = control, aes(x=freq, y=dB, group=MinMax),
+              fill=&quot;grey&quot;, alpha=.7)+ 
+  scale_y_reverse(limits = c(100,-10), breaks = seq(-10, 100, by=10))+
+  scale_x_log10(breaks = unique(d$freq), labels = unique(d$freqLabels))+
+  theme_bw()</code></pre>
+<p><img src="/post/2019-04-08-plotting-audiograms-in-r_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<p>The <code>scale_y_reverse</code> function does what it says on the tin, it flips the y-axis so that negative values are up and positive values are down. I’ve set the axis limits to to -10 and 100, and the ticks (or <code>breaks</code>) from -10 to 100, every 10 dB. The <code>scale_x_log10</code> function makes sure that our x-axis is on a log scale. I’m using the <code>freq</code> column to specify where the tick marks should. In addition I am using the <code>freqLabels</code> column to specify the labels for the tick marks (to show our kHz values without trailing zeros).</p>
+<p>For comparison, here’s what it would look like without using the <code>freqLabels</code> column to specify the labels for the tick marks.</p>
+<p><img src="/post/2019-04-08-plotting-audiograms-in-r_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
+<p>All that’s left to do now is add some axis labels and change the font size here and there.</p>
+<pre class="r"><code>ggplot()+
+  facet_grid(. ~ ear) +
+  geom_line(data = patient, aes(x=freq, y=dB, group=participant))+
+  stat_summary(data = patient,
+               aes(x=freq, y=dB,group=ear), 
+               fun.y=mean, 
+               geom=&quot;line&quot;, lwd = 1.5)+ 
+  geom_area(data = control, aes(x=freq, y=dB, group=MinMax),
+              fill=&quot;grey&quot;, alpha=.7)+ 
+  scale_y_reverse(limits = c(100,-10), breaks = seq(-10, 100, by=10))+
+  scale_x_log10(breaks =unique(d$freq), labels = unique(d$freqLabels))+
+  theme_bw()+
+  theme(axis.text=element_text(size=12),
+        axis.title=element_text(size=14),
+        strip.text.x = element_text(size = 12))+
+  labs(x = &quot;Frequency (kHz)&quot;, y = &quot;Threshold (dB HL)&quot;)</code></pre>
+<p><img src="/post/2019-04-08-plotting-audiograms-in-r_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
+<p>Your audiogram figure is ready for publication!</p>
+<div id="the-code-with-some-more-practical-instructions-on-how-to-run-it-is-available-on-my-github-page." class="section level4">
+<h4>The code (with some more practical instructions on how to run it) is available on <a href="https://github.com/timschoof/PlotAudiogram">my github page</a>.</h4>
+</div>
+</div>
 
     </div>
 
@@ -487,7 +777,7 @@ if (!require(tidyverse)) install.packages(&quot;tidyverse&quot;)</code></pre>
   <footer class="site-footer">
   
   <p class="powered-by">
-    <a href="/www.timschoof.com/privacy/">Privacy Policy</a>
+    <a href="/privacy/">Privacy Policy</a>
   </p>
   
 
@@ -599,7 +889,7 @@ if (!require(tidyverse)) install.packages(&quot;tidyverse&quot;)</code></pre>
     
     
     
-    <script src="/www.timschoof.com/js/academic.min.76a41a243fcea75defe7d35a07d3aaa3.js"></script>
+    <script src="/js/academic.min.76a41a243fcea75defe7d35a07d3aaa3.js"></script>
 
   </body>
 </html>
