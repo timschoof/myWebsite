@@ -47,7 +47,10 @@
 &lt;p&gt;If you’re involved in hearing science, chances are you’re plotting audiogram data for most of your publications. So why not write some code to make those plots and automate the process? Here I’ll walk you through some R code that you could use and/or adapt to plot your audiogram data.&lt;/p&gt;
 &lt;div id=&#34;getting-ready&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Getting ready&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&#34;https://media.giphy.com/media/26gsrnofq3K6WuETu/giphy.gif&#34; width=&#34;300&#34; /&gt; &lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://media.giphy.com/media/26gsrnofq3K6WuETu/giphy.gif&#34; width=&#34;300&#34; /&gt;
+
+&lt;/div&gt;
 &lt;p&gt;First things first, let’s make sure you have all the require R packages installed and loaded.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;if (!require(here)) install.packages(&amp;quot;here&amp;quot;)
 if (!require(tidyverse)) install.packages(&amp;quot;tidyverse&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
@@ -127,7 +130,10 @@ if (!require(tidyverse)) install.packages(&amp;quot;tidyverse&amp;quot;)&lt;/cod
 &lt;/div&gt;
 &lt;div id=&#34;cleaning-your-data&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Cleaning your data&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&#34;https://media.giphy.com/media/BW5OaeGBHVBf2/giphy.gif&#34; width=&#34;300&#34; /&gt; &lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://media.giphy.com/media/BW5OaeGBHVBf2/giphy.gif&#34; width=&#34;300&#34; /&gt;
+
+&lt;/div&gt;
 &lt;p&gt;To make things easier for ourselves when plotting the data, we’ll need to transform our data from wide to long format. We’ll want one column for participant IDs, perhaps another one indicating the participant group, test ear, test frequency, and audiometric threshold (in dB HL).&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;if(&amp;quot;group&amp;quot; %in% colnames(data)){
   long_data &amp;lt;- gather(data, key = &amp;quot;ear-freq&amp;quot;, value = &amp;quot;dB&amp;quot;,-participant,-group)
@@ -259,7 +265,10 @@ if (!require(tidyverse)) install.packages(&amp;quot;tidyverse&amp;quot;)&lt;/cod
 &lt;h2&gt;Different groups&lt;/h2&gt;
 &lt;p&gt;Imagine you have an experimental group of, say, older adults with age-related hearing loss, and a control group of young university students. In this case, the hearing thresholds of the individuals in the control group are not necessarily all that interesting. Probably all you want to do is just plot the range of thresholds of the people you included. For the experimental group, on the other hand, I’d like to argue that it’s very important to show the thresholds of all individuals you included in the study, rather than just showing group means and standard deviations.&lt;/p&gt;
 &lt;p&gt;Since we’ll be plotting the data for our experimental and control groups somewhat differently, it’s easiest to just create two different subsets of the data.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://media.giphy.com/media/n3yj8LpjbzRC0/giphy.gif&#34; width=&#34;300&#34; /&gt; &lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://media.giphy.com/media/n3yj8LpjbzRC0/giphy.gif&#34; width=&#34;300&#34; /&gt;
+
+&lt;/div&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Experimental group
 patient &amp;lt;- d %&amp;gt;%
   subset(group %in% &amp;quot;patient&amp;quot;)
@@ -282,7 +291,10 @@ control &amp;lt;- d %&amp;gt;%
 &lt;div id=&#34;plotting&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Plotting&lt;/h2&gt;
 &lt;p&gt;Finally, we’re ready to plot some data!&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://media.giphy.com/media/8fen5LSZcHQ5O/giphy.gif&#34; width=&#34;300&#34; /&gt; &lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://media.giphy.com/media/8fen5LSZcHQ5O/giphy.gif&#34; width=&#34;300&#34; /&gt;
+
+&lt;/div&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ggplot()+
   facet_grid(. ~ ear) +
   geom_line(data = patient, aes(x=freq, y=dB, group=participant))+

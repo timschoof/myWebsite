@@ -18,8 +18,7 @@
       
       <guid>/post/plotting-audiograms-in-r/</guid>
       <description>If you’re involved in hearing science, chances are you’re plotting audiogram data for most of your publications. So why not write some code to make those plots and automate the process? Here I’ll walk you through some R code that you could use and/or adapt to plot your audiogram data.
-Getting ready
-First things first, let’s make sure you have all the require R packages installed and loaded.</description>
+Getting readyFirst things first, let’s make sure you have all the require R packages installed and loaded.</description>
     </item>
     
     <item>

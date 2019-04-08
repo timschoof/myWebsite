@@ -15,7 +15,6 @@ If you're involved in hearing science, chances are you're plotting audiogram dat
 
 ## Getting ready
 ![](https://media.giphy.com/media/26gsrnofq3K6WuETu/giphy.gif){width=300px}
-<br/><br/>
 
 First things first, let's make sure you have all the require R packages installed and loaded. 
 ```{r message = FALSE, warning = FALSE}
@@ -40,7 +39,6 @@ The `here` package is pretty neat. It helps you avoid having to specify your wor
 ## Cleaning your data
 
 ![](https://media.giphy.com/media/BW5OaeGBHVBf2/giphy.gif){width=300px}
-<br/><br/>
 
 To make things easier for ourselves when plotting the data, we'll need to transform our data from wide to long format. We'll want one column for participant IDs, perhaps another one indicating the participant group, test ear, test frequency, and audiometric threshold (in dB HL). 
 
@@ -107,7 +105,6 @@ Imagine you have an experimental group of, say, older adults with age-related he
 Since we'll be plotting the data for our experimental and control groups somewhat differently, it's easiest to just create two different subsets of the data. 
 
 ![](https://media.giphy.com/media/n3yj8LpjbzRC0/giphy.gif){width=300px}
-<br/><br/>
 
 ```{r}
 # Experimental group
@@ -140,7 +137,6 @@ Here I am grouping the data by frequency and ear. It's a little bit as if I'm ta
 Finally, we're ready to plot some data!
 
 ![](https://media.giphy.com/media/8fen5LSZcHQ5O/giphy.gif){width=300px}
-<br/><br/>
   
 ```{r}
 ggplot()+
