@@ -60,7 +60,7 @@ if(!&amp;quot;devtools&amp;quot; %in% rownames(installed.packages())) install.pa
 
 # Install the stable development verions from GitHub
 devtools::install_github(&amp;quot;crsh/papaja&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;The installation procedure will probably ask you if you want to update / install a bunch of packages. You’ll need to update / install all the suggested packages, otherwise it won’t install papaja. So: select ‘All’. This didn’t actually work for me, but you might have more luck. Instead, I ended up installing all the required packages by hand: install.packages(“PackageName”). I then tried again. Eventually, it stopped suggesting packages I should update and it worked.&lt;/p&gt;
+&lt;p&gt;The installation procedure will probably ask you if you want to update / install a bunch of packages. You’ll need to update / install all the suggested packages, otherwise it won’t install papaja. So: select ‘All’. This didn’t actually work for me, but you might have more luck. Instead, I ended up installing all the required packages by hand: &lt;code&gt;install.packages(“PackageName”)&lt;/code&gt;. I then tried again. Eventually, it stopped suggesting packages I should update and it worked.&lt;/p&gt;
 &lt;p&gt;Yay, you managed to do the hardest bit, you installed the package!&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;
 &lt;img src=&#34;https://media.giphy.com/media/P9AcFvOP8zByE/giphy.gif&#34; width=&#34;300&#34; /&gt;
@@ -77,29 +77,29 @@ devtools::install_github(&amp;quot;crsh/papaja&amp;quot;)&lt;/code&gt;&lt;/pre&g
 &lt;li&gt;Remove duplicate entries in history&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;And set ‘Save workspace to .RData on exit’ to ‘Never’.&lt;/p&gt;
-&lt;p&gt;You’re just making sure that you’re no longer saving (and reloading) any objects and other things that you’ve create in your R session (but that isn’t actually in your scripts). This is especially important once you start sharing your code!&lt;/p&gt;
+&lt;p&gt;You’re just making sure that you’re no longer saving (and reloading) any objects and other things that you’ve create in your R session that aren’t actually in your scripts. This is especially important once you start sharing your code!&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;optimise-your-workflow&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Optimise your workflow&lt;/h2&gt;
 &lt;p&gt;Whenever you start a new research project, with a set of analyses and a reproducible manuscript, start a new RStudio Project. There are quite a few advantages to this. Mainly, it will resolve any file path problems, which is especially important if you want your code to run on someone else’s computer.&lt;/p&gt;
-&lt;p&gt;To create a new RStudio Project, click on &lt;strong&gt;file&lt;/strong&gt; &amp;gt; &lt;strong&gt;new project&lt;/strong&gt; &amp;gt; &lt;strong&gt;new directory&lt;/strong&gt; &amp;gt; &lt;strong&gt;new project&lt;/strong&gt; &amp;gt; name your project &amp;gt; create project.&lt;/p&gt;
+&lt;p&gt;To create a new RStudio Project, click on &lt;strong&gt;file&lt;/strong&gt; &amp;gt; &lt;strong&gt;new project&lt;/strong&gt; &amp;gt; &lt;strong&gt;new directory&lt;/strong&gt; &amp;gt; &lt;strong&gt;new project&lt;/strong&gt; &amp;gt; &lt;strong&gt;name your project&lt;/strong&gt; &amp;gt; &lt;strong&gt;create project&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;You’ll now see that you’ve created a .Proj file, which is basically your project’s RStudio start-up file. Whenever you want to continue working on this project, just click on the .Proj file and RStudio will start a new session of R and will set the working directory to the project directory. It also restores any RStudio settings you may have specified.&lt;/p&gt;
 &lt;p&gt;It’s good practice to put everything that’s relevant to your project in this project folder, or at least your data and your R code. This not only makes it easier to write your reproducible document, it also makes it much easier to share your data and code with the scientific community in one go later on.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;writing-at-last&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Writing, at last!&lt;/h2&gt;
-&lt;p&gt;The GitHub page for the &lt;a href=&#34;https://github.com/crsh/papaja&#34;&gt;papaja&lt;/a&gt; package explains exactly how to get started. There’s also a very handy &lt;a href=&#34;https://crsh.github.io/papaja_man/introduction.html#getting-started&#34;&gt;user manual&lt;/a&gt; for the package. In short, however, to create a new R Markdown file using the papaja APA template, click on &lt;em&gt;File&lt;/em&gt; &amp;gt; &lt;em&gt;New File&lt;/em&gt; &amp;gt; &lt;em&gt;R Markdown&lt;/em&gt; &amp;gt; &lt;em&gt;From Template&lt;/em&gt; and select &lt;em&gt;APA article (6th edition)&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;The GitHub page for the &lt;a href=&#34;https://github.com/crsh/papaja&#34;&gt;papaja&lt;/a&gt; package explains exactly how to get started. There’s also a very handy &lt;a href=&#34;https://crsh.github.io/papaja_man/introduction.html#getting-started&#34;&gt;user manual&lt;/a&gt; for the package. In short, however, to create a new R Markdown file using the papaja APA template, click on &lt;strong&gt;File&lt;/strong&gt; &amp;gt; &lt;strong&gt;New File&lt;/strong&gt; &amp;gt; &lt;strong&gt;R Markdown&lt;/strong&gt; &amp;gt; &lt;strong&gt;From Templatev and select &lt;/strong&gt;APA article (6th edition)**.&lt;/p&gt;
 &lt;p&gt;Now just start typing :-)&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;
 &lt;img src=&#34;https://media.giphy.com/media/XIqCQx02E1U9W/giphy.gif&#34; width=&#34;300&#34; /&gt;
 
 &lt;/div&gt;
 &lt;p&gt;Of course writing a document in R is a little bit different from writing Word document. In fact, it’s more like writing a LaTeX document. Don’t let this freak you out, it’s a learning curve that you can handle!&lt;/p&gt;
-&lt;p&gt;The new RMarkdown file you have just created has a basic structure to it, which will help you get going. The first section (called the YAML), surrounded by —, contains metadata such as your paper’s title, author names, and abstract. This is also where you can tell RStudio to load any LaTeX packages that you want to use.&lt;/p&gt;
+&lt;p&gt;The new RMarkdown file you have just created has a basic structure to it, which will help you get going. The first section (called the YAML), surrounded by &lt;code&gt;---&lt;/code&gt;, contains metadata such as your paper’s title, author names, and abstract. This is also where you can tell RStudio to load any LaTeX packages that you want to use.&lt;/p&gt;
 &lt;div id=&#34;rmarkdown-and-latex&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;RMarkdown and LaTeX&lt;/h3&gt;
-&lt;p&gt;To get to grips with the basics of RMarkdown, check out the &lt;a href=&#34;https://rmarkdown.rstudio.com/lesson-1.html&#34;&gt;tutorial&lt;/a&gt; on the RStudio website. It’s quite short. There’s also a very handy &lt;a href=&#34;https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf&#34;&gt;cheat sheet&lt;/a&gt; for when you’ve forgotten how to create a new header or a numbered list, or how to use italics.&lt;/p&gt;
-&lt;p&gt;Within RMarkdown, especially if you’re generating a PDF file, you can also use LaTeX commands. This can be very helpful if you want to include a mathematical formula or Greek letters for example. This is just to say that if you’re trying something and it doesn’t work, you may want to add the word ‘LaTeX’ into your Google search terms.&lt;/p&gt;
+&lt;p&gt;To get to grips with the basics of RMarkdown, check out &lt;a href=&#34;https://rmarkdown.rstudio.com/lesson-1.html&#34;&gt;this tutorial&lt;/a&gt; on the RStudio website. It’s quite short. There’s also a very handy &lt;a href=&#34;https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf&#34;&gt;cheat sheet&lt;/a&gt; for when you’ve forgotten how to create a new header or a numbered list, or how to use italics.&lt;/p&gt;
+&lt;p&gt;Within RMarkdown, especially if you’re generating a PDF file, you can also use LaTeX commands. This can be very helpful if you want to include a mathematical formula or Greek letters for example. This is just to say that if you’re trying something and it doesn’t work, you may want to add the word ‘LaTeX’ to your Google search term.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;embedding-r-code&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Embedding R code&lt;/h3&gt;
@@ -123,8 +123,8 @@ knitr::read_chunk(&amp;quot;myScript.R&amp;quot;)
 &lt;/div&gt;
 &lt;div id=&#34;generating-output-files&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Generating output files&lt;/h3&gt;
-&lt;p&gt;To turn your RMarkdown file (.rmd) into a PDF or LaTeX file, just click on ‘knit’. Also, all the figures you embeded into your manuscript will be saved as PDFs into a separate folder. Super convenient! Now just sit back, relax, and watch the error messages come in ;-)&lt;/p&gt;
-&lt;p&gt;When the time comes to submit your manuscript, most journals will allow you to submit a LaTeX file. However, if your journal of choice only allows you to submit Word documents, don’t despair, you should be able to render Word documents too (although it’s less streamlined). And if not, there is an R package for that! I haven’t tried it yet, but check out the &lt;a href=&#34;https://github.com/noamross/redoc&#34;&gt;redoc&lt;/a&gt; package. It apparently generates Word documents that can be de-rendered back into R Markdown, retaining edits on the Word document, including tracked changes. Great for collaborating with people who might not be ready to hop on the R train.&lt;/p&gt;
+&lt;p&gt;To turn your RMarkdown file (.rmd) into a PDF or LaTeX file, just click on &lt;strong&gt;knit&lt;/strong&gt;. Also, all the figures you embeded into your manuscript will be saved as PDFs into a separate folder. Super convenient! Now just sit back, relax, and watch the error messages come in ;-)&lt;/p&gt;
+&lt;p&gt;When the time comes to submit your manuscript, most journals will allow you to submit a LaTeX file. However, if your journal of choice only allows you to submit Word documents, don’t despair, you should be able to render Word documents too (although it’s less streamlined). And if not, there is an R package that should be able to come to the rescue! I haven’t tried it yet, but check out the &lt;a href=&#34;https://github.com/noamross/redoc&#34;&gt;redoc&lt;/a&gt; package. It apparently generates Word documents that can be de-rendered back into R Markdown, retaining edits on the Word document, including tracked changes. Great for collaborating with people who might not be ready to hop on the R train.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div id=&#34;version-control&#34; class=&#34;section level1&#34;&gt;

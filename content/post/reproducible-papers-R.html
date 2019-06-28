@@ -29,7 +29,7 @@ if(!&quot;devtools&quot; %in% rownames(installed.packages())) install.packages(&
 
 # Install the stable development verions from GitHub
 devtools::install_github(&quot;crsh/papaja&quot;)</code></pre>
-<p>The installation procedure will probably ask you if you want to update / install a bunch of packages. You’ll need to update / install all the suggested packages, otherwise it won’t install papaja. So: select ‘All’. This didn’t actually work for me, but you might have more luck. Instead, I ended up installing all the required packages by hand: install.packages(“PackageName”). I then tried again. Eventually, it stopped suggesting packages I should update and it worked.</p>
+<p>The installation procedure will probably ask you if you want to update / install a bunch of packages. You’ll need to update / install all the suggested packages, otherwise it won’t install papaja. So: select ‘All’. This didn’t actually work for me, but you might have more luck. Instead, I ended up installing all the required packages by hand: <code>install.packages(“PackageName”)</code>. I then tried again. Eventually, it stopped suggesting packages I should update and it worked.</p>
 <p>Yay, you managed to do the hardest bit, you installed the package!</p>
 <div class="figure">
 <img src="https://media.giphy.com/media/P9AcFvOP8zByE/giphy.gif" width="300" />
@@ -46,29 +46,29 @@ devtools::install_github(&quot;crsh/papaja&quot;)</code></pre>
 <li>Remove duplicate entries in history</li>
 </ul>
 <p>And set ‘Save workspace to .RData on exit’ to ‘Never’.</p>
-<p>You’re just making sure that you’re no longer saving (and reloading) any objects and other things that you’ve create in your R session (but that isn’t actually in your scripts). This is especially important once you start sharing your code!</p>
+<p>You’re just making sure that you’re no longer saving (and reloading) any objects and other things that you’ve create in your R session that aren’t actually in your scripts. This is especially important once you start sharing your code!</p>
 </div>
 <div id="optimise-your-workflow" class="section level2">
 <h2>Optimise your workflow</h2>
 <p>Whenever you start a new research project, with a set of analyses and a reproducible manuscript, start a new RStudio Project. There are quite a few advantages to this. Mainly, it will resolve any file path problems, which is especially important if you want your code to run on someone else’s computer.</p>
-<p>To create a new RStudio Project, click on <strong>file</strong> &gt; <strong>new project</strong> &gt; <strong>new directory</strong> &gt; <strong>new project</strong> &gt; name your project &gt; create project.</p>
+<p>To create a new RStudio Project, click on <strong>file</strong> &gt; <strong>new project</strong> &gt; <strong>new directory</strong> &gt; <strong>new project</strong> &gt; <strong>name your project</strong> &gt; <strong>create project</strong>.</p>
 <p>You’ll now see that you’ve created a .Proj file, which is basically your project’s RStudio start-up file. Whenever you want to continue working on this project, just click on the .Proj file and RStudio will start a new session of R and will set the working directory to the project directory. It also restores any RStudio settings you may have specified.</p>
 <p>It’s good practice to put everything that’s relevant to your project in this project folder, or at least your data and your R code. This not only makes it easier to write your reproducible document, it also makes it much easier to share your data and code with the scientific community in one go later on.</p>
 </div>
 <div id="writing-at-last" class="section level2">
 <h2>Writing, at last!</h2>
-<p>The GitHub page for the <a href="https://github.com/crsh/papaja">papaja</a> package explains exactly how to get started. There’s also a very handy <a href="https://crsh.github.io/papaja_man/introduction.html#getting-started">user manual</a> for the package. In short, however, to create a new R Markdown file using the papaja APA template, click on <em>File</em> &gt; <em>New File</em> &gt; <em>R Markdown</em> &gt; <em>From Template</em> and select <em>APA article (6th edition)</em>.</p>
+<p>The GitHub page for the <a href="https://github.com/crsh/papaja">papaja</a> package explains exactly how to get started. There’s also a very handy <a href="https://crsh.github.io/papaja_man/introduction.html#getting-started">user manual</a> for the package. In short, however, to create a new R Markdown file using the papaja APA template, click on <strong>File</strong> &gt; <strong>New File</strong> &gt; <strong>R Markdown</strong> &gt; <strong>From Templatev and select </strong>APA article (6th edition)**.</p>
 <p>Now just start typing :-)</p>
 <div class="figure">
 <img src="https://media.giphy.com/media/XIqCQx02E1U9W/giphy.gif" width="300" />
 
 </div>
 <p>Of course writing a document in R is a little bit different from writing Word document. In fact, it’s more like writing a LaTeX document. Don’t let this freak you out, it’s a learning curve that you can handle!</p>
-<p>The new RMarkdown file you have just created has a basic structure to it, which will help you get going. The first section (called the YAML), surrounded by —, contains metadata such as your paper’s title, author names, and abstract. This is also where you can tell RStudio to load any LaTeX packages that you want to use.</p>
+<p>The new RMarkdown file you have just created has a basic structure to it, which will help you get going. The first section (called the YAML), surrounded by <code>---</code>, contains metadata such as your paper’s title, author names, and abstract. This is also where you can tell RStudio to load any LaTeX packages that you want to use.</p>
 <div id="rmarkdown-and-latex" class="section level3">
 <h3>RMarkdown and LaTeX</h3>
-<p>To get to grips with the basics of RMarkdown, check out the <a href="https://rmarkdown.rstudio.com/lesson-1.html">tutorial</a> on the RStudio website. It’s quite short. There’s also a very handy <a href="https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf">cheat sheet</a> for when you’ve forgotten how to create a new header or a numbered list, or how to use italics.</p>
-<p>Within RMarkdown, especially if you’re generating a PDF file, you can also use LaTeX commands. This can be very helpful if you want to include a mathematical formula or Greek letters for example. This is just to say that if you’re trying something and it doesn’t work, you may want to add the word ‘LaTeX’ into your Google search terms.</p>
+<p>To get to grips with the basics of RMarkdown, check out <a href="https://rmarkdown.rstudio.com/lesson-1.html">this tutorial</a> on the RStudio website. It’s quite short. There’s also a very handy <a href="https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf">cheat sheet</a> for when you’ve forgotten how to create a new header or a numbered list, or how to use italics.</p>
+<p>Within RMarkdown, especially if you’re generating a PDF file, you can also use LaTeX commands. This can be very helpful if you want to include a mathematical formula or Greek letters for example. This is just to say that if you’re trying something and it doesn’t work, you may want to add the word ‘LaTeX’ to your Google search term.</p>
 </div>
 <div id="embedding-r-code" class="section level3">
 <h3>Embedding R code</h3>
@@ -92,8 +92,8 @@ knitr::read_chunk(&quot;myScript.R&quot;)
 </div>
 <div id="generating-output-files" class="section level3">
 <h3>Generating output files</h3>
-<p>To turn your RMarkdown file (.rmd) into a PDF or LaTeX file, just click on ‘knit’. Also, all the figures you embeded into your manuscript will be saved as PDFs into a separate folder. Super convenient! Now just sit back, relax, and watch the error messages come in ;-)</p>
-<p>When the time comes to submit your manuscript, most journals will allow you to submit a LaTeX file. However, if your journal of choice only allows you to submit Word documents, don’t despair, you should be able to render Word documents too (although it’s less streamlined). And if not, there is an R package for that! I haven’t tried it yet, but check out the <a href="https://github.com/noamross/redoc">redoc</a> package. It apparently generates Word documents that can be de-rendered back into R Markdown, retaining edits on the Word document, including tracked changes. Great for collaborating with people who might not be ready to hop on the R train.</p>
+<p>To turn your RMarkdown file (.rmd) into a PDF or LaTeX file, just click on <strong>knit</strong>. Also, all the figures you embeded into your manuscript will be saved as PDFs into a separate folder. Super convenient! Now just sit back, relax, and watch the error messages come in ;-)</p>
+<p>When the time comes to submit your manuscript, most journals will allow you to submit a LaTeX file. However, if your journal of choice only allows you to submit Word documents, don’t despair, you should be able to render Word documents too (although it’s less streamlined). And if not, there is an R package that should be able to come to the rescue! I haven’t tried it yet, but check out the <a href="https://github.com/noamross/redoc">redoc</a> package. It apparently generates Word documents that can be de-rendered back into R Markdown, retaining edits on the Word document, including tracked changes. Great for collaborating with people who might not be ready to hop on the R train.</p>
 </div>
 </div>
 <div id="version-control" class="section level1">
