@@ -6,10 +6,20 @@
     <description>Recent content in Posts on Tim Schoof</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 08 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 27 Jun 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Writing reproducible papers in R</title>
+      <link>/post/reproducible-papers-r/</link>
+      <pubDate>Thu, 27 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/reproducible-papers-r/</guid>
+      <description>Welcome to the future of paper writing!! Ok, I’ll tone down my enthusiasm, but… it’s AWESOME!!!
+You can write papers in RStudio and it’s super neat. So reproducible! It’s never been easier to embed your analyses in your manuscript. No more copy-pasting of results into a table, or trying to remember which bit of R code generated that one particular figure you’d like to tweak. It’s all in one place and if you tweak your analyses, the results are automatically updated in your manuscript.</description>
+    </item>
     
     <item>
       <title>Plotting audiograms in R</title>

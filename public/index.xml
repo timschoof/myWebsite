@@ -36,6 +36,117 @@
     </item>
     
     <item>
+      <title>Writing reproducible papers in R</title>
+      <link>/post/reproducible-papers-r/</link>
+      <pubDate>Thu, 27 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/reproducible-papers-r/</guid>
+      <description>
+
+
+&lt;p&gt;Welcome to the future of paper writing!! Ok, I’ll tone down my enthusiasm, but… it’s AWESOME!!!&lt;/p&gt;
+&lt;p&gt;You can write papers in RStudio and it’s super neat. So reproducible! It’s never been easier to embed your analyses in your manuscript. No more copy-pasting of results into a table, or trying to remember which bit of R code generated that one particular figure you’d like to tweak. It’s all in one place and if you tweak your analyses, the results are automatically updated in your manuscript. Magic.&lt;/p&gt;
+&lt;p&gt;I’m sure there are lots of different ways to go about this successfully, but here’s what’s working well for me. I’ve started using the &lt;a href=&#34;https://github.com/crsh/papaja&#34;&gt;papaja&lt;/a&gt; (Preparing APA Journal Articles) R package. It’s basically a template to produce documents that follow APA manuscript guidelines. In other words, you can write something in R that’s publication ready!&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://media.giphy.com/media/3ornjYwRBH1R62NetG/giphy.gif&#34; width=&#34;300&#34; /&gt;
+
+&lt;/div&gt;
+&lt;div id=&#34;getting-started&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Getting started&lt;/h2&gt;
+&lt;p&gt;First, make sure you have the latest versions of R and RStudio installed – always a good idea.&lt;/p&gt;
+&lt;p&gt;Next, it’s time to install the package! You can do this by typing the following into your RStudio command window:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Install devtools package if necessary
+if(!&amp;quot;devtools&amp;quot; %in% rownames(installed.packages())) install.packages(&amp;quot;devtools&amp;quot;)
+
+# Install the stable development verions from GitHub
+devtools::install_github(&amp;quot;crsh/papaja&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The installation procedure will probably ask you if you want to update / install a bunch of packages. You’ll need to update / install all the suggested packages, otherwise it won’t install papaja. So: select ‘All’. This didn’t actually work for me, but you might have more luck. Instead, I ended up installing all the required packages by hand: install.packages(“PackageName”). I then tried again. Eventually, it stopped suggesting packages I should update and it worked.&lt;/p&gt;
+&lt;p&gt;Yay, you managed to do the hardest bit, you installed the package!&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://media.giphy.com/media/P9AcFvOP8zByE/giphy.gif&#34; width=&#34;300&#34; /&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;setting-up-your-rstudio&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Setting up your RStudio&lt;/h2&gt;
+&lt;p&gt;While I have your attention, I’m going to suggest making some changes to your RStudio default settings that will help you be more reproducible.&lt;/p&gt;
+&lt;p&gt;Click on &lt;strong&gt;Tools&lt;/strong&gt; &amp;gt; &lt;strong&gt;Global Options&lt;/strong&gt;. In the &lt;strong&gt;General&lt;/strong&gt; tab, uncheck the following:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Restore .RData into workspace at startup&lt;/li&gt;
+&lt;li&gt;Always save history (even when not saving .RData)&lt;/li&gt;
+&lt;li&gt;Remove duplicate entries in history&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;And set ‘Save workspace to .RData on exit’ to ‘Never’.&lt;/p&gt;
+&lt;p&gt;You’re just making sure that you’re no longer saving (and reloading) any objects and other things that you’ve create in your R session (but that isn’t actually in your scripts). This is especially important once you start sharing your code!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;optimise-your-workflow&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Optimise your workflow&lt;/h2&gt;
+&lt;p&gt;Whenever you start a new research project, with a set of analyses and a reproducible manuscript, start a new RStudio Project. There are quite a few advantages to this. Mainly, it will resolve any file path problems, which is especially important if you want your code to run on someone else’s computer.&lt;/p&gt;
+&lt;p&gt;To create a new RStudio Project, click on &lt;strong&gt;file&lt;/strong&gt; &amp;gt; &lt;strong&gt;new project&lt;/strong&gt; &amp;gt; &lt;strong&gt;new directory&lt;/strong&gt; &amp;gt; &lt;strong&gt;new project&lt;/strong&gt; &amp;gt; name your project &amp;gt; create project.&lt;/p&gt;
+&lt;p&gt;You’ll now see that you’ve created a .Proj file, which is basically your project’s RStudio start-up file. Whenever you want to continue working on this project, just click on the .Proj file and RStudio will start a new session of R and will set the working directory to the project directory. It also restores any RStudio settings you may have specified.&lt;/p&gt;
+&lt;p&gt;It’s good practice to put everything that’s relevant to your project in this project folder, or at least your data and your R code. This not only makes it easier to write your reproducible document, it also makes it much easier to share your data and code with the scientific community in one go later on.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;writing-at-last&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Writing, at last!&lt;/h2&gt;
+&lt;p&gt;The GitHub page for the &lt;a href=&#34;https://github.com/crsh/papaja&#34;&gt;papaja&lt;/a&gt; package explains exactly how to get started. There’s also a very handy &lt;a href=&#34;https://crsh.github.io/papaja_man/introduction.html#getting-started&#34;&gt;user manual&lt;/a&gt; for the package. In short, however, to create a new R Markdown file using the papaja APA template, click on &lt;em&gt;File&lt;/em&gt; &amp;gt; &lt;em&gt;New File&lt;/em&gt; &amp;gt; &lt;em&gt;R Markdown&lt;/em&gt; &amp;gt; &lt;em&gt;From Template&lt;/em&gt; and select &lt;em&gt;APA article (6th edition)&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Now just start typing :-)&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://media.giphy.com/media/XIqCQx02E1U9W/giphy.gif&#34; width=&#34;300&#34; /&gt;
+
+&lt;/div&gt;
+&lt;p&gt;Of course writing a document in R is a little bit different from writing Word document. In fact, it’s more like writing a LaTeX document. Don’t let this freak you out, it’s a learning curve that you can handle!&lt;/p&gt;
+&lt;p&gt;The new RMarkdown file you have just created has a basic structure to it, which will help you get going. The first section (called the YAML), surrounded by —, contains metadata such as your paper’s title, author names, and abstract. This is also where you can tell RStudio to load any LaTeX packages that you want to use.&lt;/p&gt;
+&lt;div id=&#34;rmarkdown-and-latex&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;RMarkdown and LaTeX&lt;/h3&gt;
+&lt;p&gt;To get to grips with the basics of RMarkdown, check out the &lt;a href=&#34;https://rmarkdown.rstudio.com/lesson-1.html&#34;&gt;tutorial&lt;/a&gt; on the RStudio website. It’s quite short. There’s also a very handy &lt;a href=&#34;https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf&#34;&gt;cheat sheet&lt;/a&gt; for when you’ve forgotten how to create a new header or a numbered list, or how to use italics.&lt;/p&gt;
+&lt;p&gt;Within RMarkdown, especially if you’re generating a PDF file, you can also use LaTeX commands. This can be very helpful if you want to include a mathematical formula or Greek letters for example. This is just to say that if you’re trying something and it doesn’t work, you may want to add the word ‘LaTeX’ into your Google search terms.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;embedding-r-code&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Embedding R code&lt;/h3&gt;
+&lt;p&gt;The main draw of writing your manuscripts in R is of course that you can easily embed R code. So how do you go about that?&lt;/p&gt;
+&lt;p&gt;You create something called a &lt;code&gt;code chunk&lt;/code&gt; in your .rmd file, where you surround your R code with &lt;code&gt;```r&lt;/code&gt; and &lt;code&gt;```&lt;/code&gt; as follows:&lt;/p&gt;
+&lt;pre class=&#34;markdown&#34;&gt;&lt;code&gt;```{r}
+# plot something
+plot(cars)
+```&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The first line tells RMarkdown to expect some R code coming up. You can add lots of parameters in the curly brackets there, including figure captions, and instructions on whether to display the code or warning messages in your document. The &lt;a href=&#34;https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf&#34;&gt;cheat sheet&lt;/a&gt; shows you all the options.&lt;/p&gt;
+&lt;p&gt;Instead of typing your R code in this chunk, you can also pull some code from an external script (preferably in the same project folder). You can do this using the &lt;code&gt;read_chunk&lt;/code&gt; function. In your manuscript, create a code chunk that reads in this external script:&lt;/p&gt;
+&lt;pre class=&#34;markdown&#34;&gt;&lt;code&gt;```{r external, include = FALSE}
+knitr::read_chunk(&amp;quot;myScript.R&amp;quot;)
+```&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You can then run subsections of this external script as follows:&lt;/p&gt;
+&lt;pre class=&#34;markdown&#34;&gt;&lt;code&gt;```{r plot-audiogram}
+```&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You just need to name the different sections in your external R script so R knows exactly which bits you want to pull into your manuscript. Here I’m calling a code chunk called &lt;code&gt;plot-audiogram&lt;/code&gt; from &lt;code&gt;myScript.R&lt;/code&gt;. In myScript, the relevant code is indicated as follows:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;## ---- plot-audiogram&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Side note: the opposite of &lt;code&gt;read_chunk&lt;/code&gt; is &lt;code&gt;purl&lt;/code&gt;, which extracts all R code chunks from your RMarkdown document and puts it in a separate R file.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;generating-output-files&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Generating output files&lt;/h3&gt;
+&lt;p&gt;To turn your RMarkdown file (.rmd) into a PDF or LaTeX file, just click on ‘knit’. Also, all the figures you embeded into your manuscript will be saved as PDFs into a separate folder. Super convenient! Now just sit back, relax, and watch the error messages come in ;-)&lt;/p&gt;
+&lt;p&gt;When the time comes to submit your manuscript, most journals will allow you to submit a LaTeX file. However, if your journal of choice only allows you to submit Word documents, don’t despair, you should be able to render Word documents too (although it’s less streamlined). And if not, there is an R package for that! I haven’t tried it yet, but check out the &lt;a href=&#34;https://github.com/noamross/redoc&#34;&gt;redoc&lt;/a&gt; package. It apparently generates Word documents that can be de-rendered back into R Markdown, retaining edits on the Word document, including tracked changes. Great for collaborating with people who might not be ready to hop on the R train.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;version-control&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Version control&lt;/h1&gt;
+&lt;p&gt;To be extra cool, put everything in a GitHub repository! No, seriously, not just for the street cred, it’s actually useful. You can have them set to private if you’re at an educational institution.&lt;/p&gt;
+&lt;div id=&#34;useful-resources&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Useful resources&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Papaja package: &lt;a href=&#34;https://github.com/crsh/papaja&#34; class=&#34;uri&#34;&gt;https://github.com/crsh/papaja&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Papaja user manual with more details about writing papers in RStudio, including how to cite papers: &lt;a href=&#34;https://crsh.github.io/papaja_man/introduction.html#getting-started&#34; class=&#34;uri&#34;&gt;https://crsh.github.io/papaja_man/introduction.html#getting-started&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Read more about workflows and RMarkdown in Nicholas Tierney’s &lt;a href=&#34;https://rmd4sci.njtierney.com/workflow.html&#34;&gt;short book&lt;/a&gt; about RMarkdown, which is specifically aimed at scientists.&lt;/li&gt;
+&lt;li&gt;I encourage you to read this great &lt;a href=&#34;https://www.tidyverse.org/articles/2017/12/workflow-vs-script/&#34;&gt;blog post&lt;/a&gt; by Jenny Bryan.&lt;/li&gt;
+&lt;li&gt;Get to grips with RMarkdown: &lt;a href=&#34;https://rmarkdown.rstudio.com/lesson-1.html&#34; class=&#34;uri&#34;&gt;https://rmarkdown.rstudio.com/lesson-1.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;RMarkdown cheat sheet: &lt;a href=&#34;https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf&#34; class=&#34;uri&#34;&gt;https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;redoc R package: &lt;a href=&#34;https://github.com/noamross/redoc&#34; class=&#34;uri&#34;&gt;https://github.com/noamross/redoc&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Plotting audiograms in R</title>
       <link>/post/plotting-audiograms-in-r/</link>
       <pubDate>Mon, 08 Apr 2019 00:00:00 +0000</pubDate>
@@ -604,16 +715,6 @@ control &amp;lt;- d %&amp;gt;%
       
       <guid>/publication/jasa-el2015/</guid>
       <description></description>
-    </item>
-    
-    <item>
-      <title>Individual differences in hearing aid outcomes</title>
-      <link>/project/has/</link>
-      <pubDate>Fri, 01 May 2015 00:00:00 +0100</pubDate>
-      
-      <guid>/project/has/</guid>
-      <description>&lt;p&gt;My postdoctoral work at Northwestern University focused on understanding individual differences that predict hearing aid outcomes, including speech in noise perception, listening effort, and perceived sound quality. Previous laboratory-based studies suggest a link between an individual&amp;rsquo;s susceptibility to signal modification caused by hearing aid processing and cognitive function. I worked on a clinical trial, using commercially available hearing aids, that investigated the effects of signal modification introduced by wide-dynamic range compression speed and frequency compression. We found that hearing aid outcomes relate to individual differences in audiometric thresholds, age, and working memory capacity.&lt;/p&gt;
-</description>
     </item>
     
   </channel>
