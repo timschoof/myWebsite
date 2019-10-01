@@ -31,7 +31,7 @@ role: Research Associate
 social:
 - icon: envelope
   icon_pack: fas
-  link: mailto:t.schoof@ucl.ac.uk'
+  link: mailto:timschoof@gmail.com'
 - icon: twitter
   icon_pack: fab
   link: https://twitter.com/drtimschoof
