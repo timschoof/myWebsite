@@ -142,6 +142,12 @@
   
     <url>
     
+      <loc>/authors/admin/</loc>
+      <priority>0</priority>
+    </url>
+  
+    <url>
+    
       <loc>/authors/andrew-faulkner/</loc>
       <lastmod>2013-01-01T00:00:00+00:00</lastmod>
       <priority>0</priority>
@@ -310,12 +316,6 @@
     
       <loc>/authors/varsha-rallapalli/</loc>
       <lastmod>2018-11-02T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-  
-    <url>
-    
-      <loc>/authors/admin/</loc>
       <priority>0</priority>
     </url>
   
