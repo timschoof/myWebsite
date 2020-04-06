@@ -26,7 +26,7 @@ interests:
 name: Tim Schoof
 organizations:
 - name: Starkey Hearing Technologies
-  url: "www.starkey.com"
+  url: www.starkey.com
 role: Research Scientist
 social:
 - icon: envelope
