@@ -25,9 +25,9 @@ interests:
 - R
 name: Tim Schoof
 organizations:
-- name: University College London
-  url: "https://www.ucl.ac.uk/pals/research/speech-hearing-and-phonetic-sciences"
-role: Research Associate
+- name: Starkey Hearing Technologies
+  url: "www.starkey.com"
+role: Research Scientist
 social:
 - icon: envelope
   icon_pack: fas
@@ -41,6 +41,8 @@ social:
 - icon: github
   icon_pack: fab
   link: https://github.com/timschoof
+- icon: linkedin
+  icon_pack: fab
+  link: https://www.linkedin.com/in/tim-schoof-821a10113/
 ---
 
-I am a Research Associate at the department of Speech, Hearing and Phonetic Sciences at UCL. My research primarily focuses on the question why older adults, with and without hearing loss, experience increased difficulties understanding speech in noise. I am particularly interested in the potential effects of cochlear synaptopathy, or 'hidden hearing loss', on speech perception. I have also looked at individual differences in hearing aid outcomes using different signal processing strategies. My aim is to ultimately be able to improve the listening experience of older adults. In addition to science, I absolutely love statistics and programming. When I am not working, I am either travelling the world, or planning a trip. 
