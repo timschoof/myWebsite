@@ -1,28 +1,7 @@
 ---
 authors:
 - admin
-education:
-  courses:
-  - course: PhD in Speech, Hearing and Phonetic Sciences
-    institution: University College London
-    year: 2014
-  - course: MRes in Speech, Language and Cognition
-    institution: University College London
-    year: 2011
-  - course: Ma in Linguistics
-    institution: Utrecht University
-    year: 2010
-  - course: BA in English Language and Literature
-    institution: University of Groningen
-    year: 2007
 email: ""
-interests:
-- Hearing impairment
-- Speech perception
-- Auditory neuroscience
-- Statistics
-- Data visualisation
-- R
 name: Tim Schoof
 organizations:
 - name: Starkey Hearing Technologies
@@ -46,3 +25,5 @@ social:
   link: https://www.linkedin.com/in/tim-schoof-821a10113/
 ---
 
+I am a research scientist at Starkey Hearing Technologies, with ... My interests include...
+I was previously a postdoctoral researcher at University College London and Northwestern University. I obtained my PhD in Speech, Hearing, and Phonetic Sciences at UCL in 2014. 
