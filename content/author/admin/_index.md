@@ -5,7 +5,7 @@ email: ""
 name: Tim Schoof
 organizations:
 - name: Starkey Hearing Technologies
-  url: www.starkey.com
+  url: "https://www.starkey.com"
 role: Research Scientist
 social:
 - icon: envelope
@@ -25,5 +25,6 @@ social:
   link: https://www.linkedin.com/in/tim-schoof-821a10113/
 ---
 
-I am a research scientist at Starkey Hearing Technologies, with ... My interests include...
-I was previously a postdoctoral researcher at University College London and Northwestern University. I obtained my PhD in Speech, Hearing, and Phonetic Sciences at UCL in 2014. 
+I am a research scientist at Starkey Hearing Technologies, where I help design, conduct, and analyse experiments that impact future hearing aid technology and bring benefit to those with hearing loss. 
+Outside hearing science, my interests include statistics, data visualisation, programming in R, and travelling the world. I can't resist a good learning curve, so my latest learning adventures include Bayesian data analysis, getting to grips with Python, and baking bread. 
+I previously worked in academia as a postdoctoral researcher at University College London and Northwestern University. I obtained my PhD in Speech, Hearing, and Phonetic Sciences at University College London in 2014. 
