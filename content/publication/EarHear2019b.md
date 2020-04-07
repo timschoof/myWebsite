@@ -1,6 +1,6 @@
 +++
 title = "Switching streams across ears to evaluate informational masking of speech-on-speech"
-date = 2019-02-01T00:00:00
+date = 2020-02-01T00:00:00
 
 # Authors. Comma separated list, e.g. `["Bob Smith", "David Jones"]`.
 authors = ["Axelle Calcus", "**Tim Schoof**","Stuart Rosen", "Barbara Shinn-Cunningham", "Pamela Souza"]
@@ -17,7 +17,7 @@ authors = ["Axelle Calcus", "**Tim Schoof**","Stuart Rosen", "Barbara Shinn-Cunn
 publication_types = ["2"]
 
 # Publication name and optional abbreviated version.
-publication = "*Ear and Hearing*, in press"
+publication = "*Ear and Hearing*, 41(1), 208-216"
 #publication_short = "In *ICMEW*"
 
 # Abstract and optional shortened version.
@@ -44,7 +44,7 @@ projects = []
 #url_slides = "#"
 #url_video = "#"
 #url_poster = "#"
-#url_source = "#"
+url_source = "https://cdn.journals.lww.com/ear-hearing/Abstract/2020/01000/Switching_Streams_Across_Ears_to_Evaluate.21.aspx"
 
 # Custom links (optional).
 #   Uncomment line below to enable. For multiple links, use the form `[{...}, {...}, {...}]`.

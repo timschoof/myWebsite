@@ -17,7 +17,7 @@ authors = ["Pamela Souza", "Kathryn Arehart","**Tim Schoof**","Melinda Anderson"
 publication_types = ["2"]
 
 # Publication name and optional abbreviated version.
-publication = "*Ear and Hearing*, in press"
+publication = "*Ear and Hearing*, 40(6), 1280-1292"
 #publication_short = "In *ICMEW*"
 
 # Abstract and optional shortened version.
@@ -44,7 +44,7 @@ projects = ["HAs"]
 #url_slides = "#"
 #url_video = "#"
 #url_poster = "#"
-#url_source = "#"
+url_source = "https://cdn.journals.lww.com/ear-hearing/Abstract/2019/11000/Understanding_Variability_in_Individual_Response.3.aspx"
 
 # Custom links (optional).
 #   Uncomment line below to enable. For multiple links, use the form `[{...}, {...}, {...}]`.
