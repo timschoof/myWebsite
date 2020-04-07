@@ -36,7 +36,7 @@ selected = false
 projects = []
 
 # Links (optional).
-#url_pdf = ""
+url_pdf = "https://cdn.journals.lww.com/ear-hearing/Abstract/2020/01000/Switching_Streams_Across_Ears_to_Evaluate.21.aspx"
 #url_preprint = ""
 #url_code = "#"
 #url_dataset = "#"
@@ -44,7 +44,7 @@ projects = []
 #url_slides = "#"
 #url_video = "#"
 #url_poster = "#"
-url_source = "https://cdn.journals.lww.com/ear-hearing/Abstract/2020/01000/Switching_Streams_Across_Ears_to_Evaluate.21.aspx"
+#url_source = ""
 
 # Custom links (optional).
 #   Uncomment line below to enable. For multiple links, use the form `[{...}, {...}, {...}]`.
