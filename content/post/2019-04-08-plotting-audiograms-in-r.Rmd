@@ -10,6 +10,10 @@ image:
   caption: ''
   focal_point: ''
 ---
+<style>
+body {
+text-align: justify}
+</style>
 
 If you're involved in hearing science, chances are you're plotting audiogram data for most of your publications. So why not write some code to make those plots and automate the process? Here I'll walk you through some R code that you could use and/or adapt to plot your audiogram data.
 

@@ -10,6 +10,10 @@ image:
   caption: ''
   focal_point: ''
 ---
+<style>
+body {
+text-align: justify}
+</style>
 
 Welcome to the future of paper writing!! Ok, I’ll tone down my enthusiasm, but… it’s AWESOME!!!
 
