@@ -9,10 +9,6 @@ image:
   caption: ''
   focal_point: ''
 ---
-<style>
-body {
-text-align: justify}
-</style>
 
 This work was presented as a poster at the American Auditory Society's Annual Scientific and Technology Conference, 2-4 March 2017, Scottsdale, AZ. You can download a copy of the poster [here](../transparancy/Schoof AAS 2017 poster.pdf).
 

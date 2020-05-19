@@ -10,10 +10,6 @@ image:
   caption: ''
   focal_point: ''
 ---
-<style>
-body {
-text-align: justify}
-</style>
 
 I've been on a bit of a learning binge recently and I've found that probably the most difficult thing when trying to learn something new is to find a resource that works for you. The second most difficult thing is to then actually stick with it and not get distracted by all those other amazing books and courses out there! 
 

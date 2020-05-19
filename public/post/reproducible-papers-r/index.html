@@ -24,8 +24,8 @@
   
     
   
-  <meta name="description" content="body {text-align: justify}Welcome to the future of paper writing!! Ok, I’ll tone down my enthusiasm, but… it’s AWESOME!!!
-You can write papers in RStudio and it’s super neat. So reproducible! It’s never been easier to embed your analyses in your manuscript. No more copy-pasting of results into a table, or trying to remember which bit of R code generated that one particular figure you’d like to tweak.">
+  <meta name="description" content="Welcome to the future of paper writing!! Ok, I’ll tone down my enthusiasm, but… it’s AWESOME!!!
+You can write papers in RStudio and it’s super neat. So reproducible! It’s never been easier to embed your analyses in your manuscript. No more copy-pasting of results into a table, or trying to remember which bit of R code generated that one particular figure you’d like to tweak. It’s all in one place and if you tweak your analyses, the results are automatically updated in your manuscript.">
 
   
   <link rel="alternate" hreflang="en-us" href="/post/reproducible-papers-r/">
@@ -131,8 +131,8 @@ You can write papers in RStudio and it’s super neat. So reproducible! It’s n
   <meta property="og:site_name" content="Tim Schoof">
   <meta property="og:url" content="/post/reproducible-papers-r/">
   <meta property="og:title" content="Writing reproducible papers in R | Tim Schoof">
-  <meta property="og:description" content="body {text-align: justify}Welcome to the future of paper writing!! Ok, I’ll tone down my enthusiasm, but… it’s AWESOME!!!
-You can write papers in RStudio and it’s super neat. So reproducible! It’s never been easier to embed your analyses in your manuscript. No more copy-pasting of results into a table, or trying to remember which bit of R code generated that one particular figure you’d like to tweak."><meta property="og:image" content="/img/icon-192.png">
+  <meta property="og:description" content="Welcome to the future of paper writing!! Ok, I’ll tone down my enthusiasm, but… it’s AWESOME!!!
+You can write papers in RStudio and it’s super neat. So reproducible! It’s never been easier to embed your analyses in your manuscript. No more copy-pasting of results into a table, or trying to remember which bit of R code generated that one particular figure you’d like to tweak. It’s all in one place and if you tweak your analyses, the results are automatically updated in your manuscript."><meta property="og:image" content="/img/icon-192.png">
   <meta property="og:locale" content="en-us">
   
   <meta property="article:published_time" content="2019-06-27T00:00:00&#43;00:00">
@@ -414,10 +414,6 @@ You can write papers in RStudio and it’s super neat. So reproducible! It’s n
       
 
 
-<style>
-body {
-text-align: justify}
-</style>
 <p>Welcome to the future of paper writing!! Ok, I’ll tone down my enthusiasm, but… it’s AWESOME!!!</p>
 <p>You can write papers in RStudio and it’s super neat. So reproducible! It’s never been easier to embed your analyses in your manuscript. No more copy-pasting of results into a table, or trying to remember which bit of R code generated that one particular figure you’d like to tweak. It’s all in one place and if you tweak your analyses, the results are automatically updated in your manuscript. Magic.</p>
 <p>I’m sure there are lots of different ways to go about this successfully, but here’s what’s working well for me. I’ve started using the <a href="https://github.com/crsh/papaja">papaja</a> (Preparing APA Journal Articles) R package. It’s basically a template to produce documents that follow APA manuscript guidelines. In other words, you can write something in R that’s publication ready!</p>
@@ -428,7 +424,6 @@ text-align: justify}
 <p>Next, it’s time to install the package! You can do this by typing the following into your RStudio command window:</p>
 <pre class="r"><code># Install devtools package if necessary
 if(!&quot;devtools&quot; %in% rownames(installed.packages())) install.packages(&quot;devtools&quot;)
-
 # Install the stable development verions from GitHub
 devtools::install_github(&quot;crsh/papaja&quot;)</code></pre>
 <p>The installation procedure will probably ask you if you want to update / install a bunch of packages. You’ll need to update / install all the suggested packages, otherwise it won’t install papaja. So: select ‘All’. This didn’t actually work for me, but you might have more luck. Instead, I ended up installing all the required packages by hand: <code>install.packages(“PackageName”)</code>. I then tried again. Eventually, it stopped suggesting packages I should update and it worked.</p>

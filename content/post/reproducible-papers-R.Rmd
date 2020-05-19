@@ -1,0 +1,136 @@
+---
+title: Writing reproducible papers in R
+author: ''
+date: '2019-06-27'
+slug: reproducible-papers-R
+categories: []
+tags: []
+active: false
+image:
+  caption: ''
+  focal_point: ''
+---
+
+Welcome to the future of paper writing!! Ok, I’ll tone down my enthusiasm, but… it’s AWESOME!!!
+
+You can write papers in RStudio and it’s super neat. So reproducible! It's never been easier to embed your analyses in your manuscript. No more copy-pasting of results into a table, or trying to remember which bit of R code generated that one particular figure you'd like to tweak. It's all in one place and if you tweak your analyses, the results are automatically updated in your manuscript. Magic.
+
+I'm sure there are lots of different ways to go about this successfully, but here's what's working well for me. I've started using the [papaja](https://github.com/crsh/papaja) (Preparing APA Journal Articles) R package. It's basically a template to produce documents that follow APA manuscript guidelines. In other words, you can write something in R that's publication ready!
+
+![](https://media.giphy.com/media/3ornjYwRBH1R62NetG/giphy.gif){width=300px}
+
+## Getting started
+
+First, make sure you have the latest versions of R and RStudio installed – always a good idea. 
+
+Next, it's time to install the package! You can do this by typing the following into your RStudio command window:
+
+```{r eval = FALSE}
+# Install devtools package if necessary
+if(!"devtools" %in% rownames(installed.packages())) install.packages("devtools")
+# Install the stable development verions from GitHub
+devtools::install_github("crsh/papaja")
+```
+
+The installation procedure will probably ask you if you want to update / install a bunch of packages. You'll need to update / install all the suggested packages, otherwise it won't install papaja. So: select 'All'. This didn't actually work for me, but you might have more luck. Instead, I ended up installing all the required packages by hand: `install.packages(“PackageName”)`. I then tried again. Eventually, it stopped suggesting packages I should update and it worked. 
+
+Yay, you managed to do the hardest bit, you installed the package!
+
+![](https://media.giphy.com/media/P9AcFvOP8zByE/giphy.gif){width=300px}
+
+## Setting up your RStudio
+
+While I have your attention, I'm going to suggest making some changes to your RStudio default settings that will help you be more reproducible. 
+
+Click on **Tools** > **Global Options**. In the **General** tab, uncheck the following:
+
+* Restore .RData into workspace at startup
+* Always save history (even when not saving .RData)
+* Remove duplicate entries in history
+
+And set 'Save workspace to .RData on exit' to 'Never'.
+
+You're just making sure that you're no longer saving (and reloading) any objects and other things that you've create in your R session that aren't actually in your scripts. This is especially important once you start sharing your code! 
+
+## Optimise your workflow
+
+Whenever you start a new research project, with a set of analyses and a reproducible manuscript, start a new RStudio Project. There are quite a few advantages to this. Mainly, it will resolve any file path problems, which is especially important if you want your code to run on someone else's computer.  
+
+To create a new RStudio Project, click on **file** > **new project** > **new directory** > **new project** > **name your project** > **create project**.
+
+You'll now see that you've created a .Proj file, which is basically your project's RStudio start-up file. Whenever you want to continue working on this project, just click on the .Proj file and RStudio will start a new session of R and will set the working directory to the project directory. It also restores any RStudio settings you may have specified.
+
+It's good practice to put everything that's relevant to your project in this project folder, or at least your data and your R code. This not only makes it easier to write your reproducible document, it also makes it much easier to share your data and code with the scientific community in one go later on.
+
+## Writing, at last!
+
+The GitHub page for the [papaja](https://github.com/crsh/papaja) package explains exactly how to get started. There's also a very handy [user manual](https://crsh.github.io/papaja_man/introduction.html#getting-started) for the package. In short, however, to create a new R Markdown file using the papaja APA template, click on **File** > **New File** > **R Markdown** > **From Templatev and select **APA article (6th edition)**.
+
+Now just start typing :-) 
+
+![](https://media.giphy.com/media/XIqCQx02E1U9W/giphy.gif){width=300px}
+
+Of course writing a document in R is a little bit different from writing Word document. In fact, it's more like writing a LaTeX document. Don't let this freak you out, it's a learning curve that you can handle!
+
+The new RMarkdown file you have just created has a basic structure to it, which will help you get going. The first section (called the YAML), surrounded by `---`, contains metadata such as your paper's title, author names, and abstract. This is also where you can tell RStudio to load any LaTeX packages that you want to use. 
+
+### RMarkdown and LaTeX
+To get to grips with the basics of RMarkdown, check out [this tutorial](https://rmarkdown.rstudio.com/lesson-1.html) on the RStudio website. It's quite short. There's also a very handy [cheat sheet](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf) for when you've forgotten how to create a new header or a numbered list, or how to use italics.
+
+Within RMarkdown, especially if you're generating a PDF file, you can also use LaTeX commands. This can be very helpful if you want to include a mathematical formula or Greek letters for example. This is just to say that if you're trying something and it doesn't work, you may want to add the word 'LaTeX' to your Google search term.
+
+### Embedding R code
+
+The main draw of writing your manuscripts in R is of course that you can easily embed R code. So how do you go about that?
+
+You create something called a `code chunk` in your .rmd file, where you surround your R code with ` ```r ` and ` ``` ` as follows:
+
+````markdown
+`r ''````{r}
+# plot something
+plot(cars)
+```
+````
+
+The first line tells RMarkdown to expect some R code coming up. You can add lots of parameters in the curly brackets there, including figure captions, and instructions on whether to display the code or warning messages in your document. The [cheat sheet](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf) shows you all the options.
+
+Instead of typing your R code in this chunk, you can also pull some code from an external script (preferably in the same project folder). You can do this using the `read_chunk` function. In your manuscript, create a code chunk that reads in this external script:
+
+````markdown
+`r ''````{r external, include = FALSE}
+knitr::read_chunk("myScript.R")
+```
+````
+
+You can then run subsections of this external script as follows:
+
+````markdown
+`r ''````{r plot-audiogram}
+```
+````
+
+You just need to name the different sections in your external R script so R knows exactly which bits you want to pull into your manuscript. Here I'm calling a code chunk called `plot-audiogram` from `myScript.R`. In myScript, the relevant code is indicated as follows: 
+
+`## ---- plot-audiogram`
+
+Side note: the opposite of `read_chunk` is `purl`, which extracts all R code chunks from your RMarkdown document and puts it in a separate R file. 
+
+### Generating output files
+
+To turn your RMarkdown file (.rmd) into a PDF or LaTeX file, just click on **knit**. 
+Also, all the figures you embeded into your manuscript will be saved as PDFs into a separate folder. Super convenient! Now just sit back, relax, and watch the error messages come in ;-)
+
+When the time comes to submit your manuscript, most journals will allow you to submit a LaTeX file. However, if your journal of choice only allows you to submit Word documents, don't despair, you should be able to render Word documents too (although it's less streamlined). And if not, there is an R package that should be able to come to the rescue! I haven't tried it yet, but check out the [redoc](https://github.com/noamross/redoc) package. It apparently generates Word documents that can be de-rendered back into R Markdown, retaining edits on the Word document, including tracked changes. Great for collaborating with people who might not be ready to hop on the R train.
+
+# Version control
+
+To be extra cool, put everything in a GitHub repository! No, seriously, not just for the street cred, it’s actually useful. You can have them set to private if you’re at an educational institution.
+
+### Useful resources
+* Papaja package: https://github.com/crsh/papaja
+* Papaja user manual with more details about writing papers in RStudio, including how to cite papers: https://crsh.github.io/papaja_man/introduction.html#getting-started
+* Read more about workflows and RMarkdown in Nicholas Tierney's [short book](https://rmd4sci.njtierney.com/workflow.html) about RMarkdown, which is specifically aimed at scientists.
+* I encourage you to read this great [blog post](https://www.tidyverse.org/articles/2017/12/workflow-vs-script/) by Jenny Bryan.
+* Get to grips with RMarkdown: https://rmarkdown.rstudio.com/lesson-1.html
+* RMarkdown cheat sheet: https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf
+* redoc R package: https://github.com/noamross/redoc

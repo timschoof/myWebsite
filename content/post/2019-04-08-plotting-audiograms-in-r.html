@@ -13,10 +13,6 @@ image:
 
 
 
-<style>
-body {
-text-align: justify}
-</style>
 <p>If you’re involved in hearing science, chances are you’re plotting audiogram data for most of your publications. So why not write some code to make those plots and automate the process? Here I’ll walk you through some R code that you could use and/or adapt to plot your audiogram data.</p>
 <div id="getting-ready" class="section level2">
 <h2>Getting ready</h2>
@@ -26,6 +22,7 @@ text-align: justify}
 if (!require(tidyverse)) install.packages(&quot;tidyverse&quot;)</code></pre>
 <p>Next, let’s read in our data file. I’m going to assume that you have saved your data in a .csv file in the following format: one row per participant, with one column with participant IDs, perhaps another one indicating participant group, and the other columns indicating test ear and frequency. In other words, I’m assuming your data is in wide format.</p>
 <pre class="r"><code>data&lt;-read.csv(here(paste(csvFile,&quot;.csv&quot;,sep=&quot;&quot;)),header=T)</code></pre>
+<pre><code>## Warning: package &#39;knitr&#39; was built under R version 3.6.3</code></pre>
 <table>
 <thead>
 <tr class="header">
