@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>admin on Tim Schoof</title>
@@ -16,7 +16,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/author/admin/</guid>
-      <description>I am a Research Associate at the department of Speech, Hearing and Phonetic Sciences at UCL. My research primarily focuses on the question why older adults, with and without hearing loss, experience increased difficulties understanding speech in noise. I am particularly interested in the potential effects of cochlear synaptopathy, or &amp;lsquo;hidden hearing loss&amp;rsquo;, on speech perception. I have also looked at individual differences in hearing aid outcomes using different signal processing strategies.</description>
+      <description>I am a research scientist at Starkey Hearing Technologies, where I help design, conduct, and analyse experiments that impact future hearing aid technology. Outside of hearing science, my interests include statistics, data visualisation, programming in R, and travelling the world. I can&amp;rsquo;t resist a good learning curve, so my latest learning adventures include Bayesian data analysis, getting to grips with Python, and baking bread. I previously worked in academia as a postdoctoral researcher at University College London and Northwestern University.</description>
     </item>
     
   </channel>

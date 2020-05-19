@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Authors on Tim Schoof</title>
@@ -6,7 +6,7 @@
     <description>Recent content in Authors on Tim Schoof</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 01 Feb 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 01 Feb 2020 00:00:00 -0600</lastBuildDate>
     
 	<atom:link href="/authors/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,25 +14,16 @@
     <item>
       <title>**Tim Schoof**</title>
       <link>/authors/tim-schoof/</link>
-      <pubDate>Fri, 01 Feb 2019 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 01 Feb 2020 00:00:00 -0600</pubDate>
       
       <guid>/authors/tim-schoof/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Andrew Faulkner</title>
-      <link>/authors/andrew-faulkner/</link>
-      <pubDate>Tue, 01 Jan 2013 00:00:00 +0000</pubDate>
-      
-      <guid>/authors/andrew-faulkner/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Axelle Calcus</title>
       <link>/authors/axelle-calcus/</link>
-      <pubDate>Fri, 01 Feb 2019 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 01 Feb 2020 00:00:00 -0600</pubDate>
       
       <guid>/authors/axelle-calcus/</guid>
       <description></description>
@@ -41,43 +32,43 @@
     <item>
       <title>Barbara Shinn-Cunningham</title>
       <link>/authors/barbara-shinn-cunningham/</link>
-      <pubDate>Fri, 01 Feb 2019 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 01 Feb 2020 00:00:00 -0600</pubDate>
       
       <guid>/authors/barbara-shinn-cunningham/</guid>
       <description></description>
     </item>
     
     <item>
+      <title>Pamela Souza</title>
+      <link>/authors/pamela-souza/</link>
+      <pubDate>Sat, 01 Feb 2020 00:00:00 -0600</pubDate>
+      
+      <guid>/authors/pamela-souza/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Stuart Rosen</title>
+      <link>/authors/stuart-rosen/</link>
+      <pubDate>Sat, 01 Feb 2020 00:00:00 -0600</pubDate>
+      
+      <guid>/authors/stuart-rosen/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Dorina Strori</title>
       <link>/authors/dorina-strori/</link>
-      <pubDate>Fri, 01 Feb 2019 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 01 Feb 2019 00:00:00 -0600</pubDate>
       
       <guid>/authors/dorina-strori/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Guangting Mai</title>
-      <link>/authors/guangting-mai/</link>
-      <pubDate>Mon, 28 Jan 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/authors/guangting-mai/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Jing Shen</title>
-      <link>/authors/jing-shen/</link>
-      <pubDate>Wed, 01 Mar 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/authors/jing-shen/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Kathryn Arehart</title>
       <link>/authors/kathryn-arehart/</link>
-      <pubDate>Fri, 01 Feb 2019 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 01 Feb 2019 00:00:00 -0600</pubDate>
       
       <guid>/authors/kathryn-arehart/</guid>
       <description></description>
@@ -86,7 +77,7 @@
     <item>
       <title>Lauren Balmert</title>
       <link>/authors/lauren-balmert/</link>
-      <pubDate>Fri, 01 Feb 2019 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 01 Feb 2019 00:00:00 -0600</pubDate>
       
       <guid>/authors/lauren-balmert/</guid>
       <description></description>
@@ -95,54 +86,63 @@
     <item>
       <title>Melinda Anderson</title>
       <link>/authors/melinda-anderson/</link>
-      <pubDate>Fri, 01 Feb 2019 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 01 Feb 2019 00:00:00 -0600</pubDate>
       
       <guid>/authors/melinda-anderson/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Pamela Souza</title>
-      <link>/authors/pamela-souza/</link>
-      <pubDate>Fri, 01 Feb 2019 00:00:00 +0000</pubDate>
+      <title>Guangting Mai</title>
+      <link>/authors/guangting-mai/</link>
+      <pubDate>Mon, 28 Jan 2019 00:00:00 -0600</pubDate>
       
-      <guid>/authors/pamela-souza/</guid>
+      <guid>/authors/guangting-mai/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Peter Howell</title>
       <link>/authors/peter-howell/</link>
-      <pubDate>Mon, 28 Jan 2019 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 28 Jan 2019 00:00:00 -0600</pubDate>
       
       <guid>/authors/peter-howell/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Stuart Rosen</title>
-      <link>/authors/stuart-rosen/</link>
-      <pubDate>Fri, 01 Feb 2019 00:00:00 +0000</pubDate>
+      <title>Varsha Rallapalli</title>
+      <link>/authors/varsha-rallapalli/</link>
+      <pubDate>Fri, 02 Nov 2018 00:00:00 -0500</pubDate>
       
-      <guid>/authors/stuart-rosen/</guid>
+      <guid>/authors/varsha-rallapalli/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jing Shen</title>
+      <link>/authors/jing-shen/</link>
+      <pubDate>Wed, 01 Mar 2017 00:00:00 -0600</pubDate>
+      
+      <guid>/authors/jing-shen/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Andrew Faulkner</title>
+      <link>/authors/andrew-faulkner/</link>
+      <pubDate>Tue, 01 Jan 2013 00:00:00 -0600</pubDate>
+      
+      <guid>/authors/andrew-faulkner/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Tim Green</title>
       <link>/authors/tim-green/</link>
-      <pubDate>Tue, 01 Jan 2013 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 01 Jan 2013 00:00:00 -0600</pubDate>
       
       <guid>/authors/tim-green/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Varsha Rallapalli</title>
-      <link>/authors/varsha-rallapalli/</link>
-      <pubDate>Fri, 02 Nov 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/authors/varsha-rallapalli/</guid>
       <description></description>
     </item>
     

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Projects on Tim Schoof</title>
@@ -17,7 +17,7 @@
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0100</pubDate>
       
       <guid>/project/hhl/</guid>
-      <description>My postdoctoral work at UCL looks at the potential implications of hidden hearing loss. Hidden hearing loss, or cochlear synaptopathy, refers to damage to the synapses connecting the inner hair cells in the cochlea to the auditory nerve. Crucially, this type of damage does not necessarily result in any changes in audiometric thresholds. Animal studies have shown that this damage can arise as a consequence of noise exposure or ageing. While evidence for hidden hearing loss in humans is emerging, it remains challenging to measure non-invasively.</description>
+      <description>Postdoc at UCL 2017-2019</description>
     </item>
     
     <item>
@@ -26,7 +26,7 @@
       <pubDate>Fri, 01 May 2015 00:00:00 +0100</pubDate>
       
       <guid>/project/has/</guid>
-      <description>My postdoctoral work at Northwestern University focused on understanding individual differences that predict hearing aid outcomes, including speech in noise perception, listening effort, and perceived sound quality. Previous laboratory-based studies suggest a link between an individual&amp;rsquo;s susceptibility to signal modification caused by hearing aid processing and cognitive function. I worked on a clinical trial, using commercially available hearing aids, that investigated the effects of signal modification introduced by wide-dynamic range compression speed and frequency compression.</description>
+      <description>Postdoc at Northwestern University 2015-2016</description>
     </item>
     
     <item>
@@ -35,7 +35,7 @@
       <pubDate>Thu, 01 Sep 2011 00:00:00 +0100</pubDate>
       
       <guid>/project/phd/</guid>
-      <description>My PhD research addressed the question why older adults with normal hearing experience increased difficulties understanding speech in the presence of background noise. I looked at the relative contributions of age-related declines in subcortical auditory processing, as measured by the auditory brainstem response (ABR) and the frequency following response (FFR), and declines in cognitive processing. In short, the data suggested that age-related declines in auditory and cognitive processing, in the absence of hearing impairment, do not necessarily lead to increased speech in noise difficulties.</description>
+      <description>PhD at UCL 2011 - 2014</description>
     </item>
     
   </channel>

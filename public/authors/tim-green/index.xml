@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tim Green on Tim Schoof</title>
@@ -6,7 +6,7 @@
     <description>Recent content in Tim Green on Tim Schoof</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 01 Jan 2013 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 01 Jan 2013 00:00:00 -0600</lastBuildDate>
     
 	<atom:link href="/authors/tim-green/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>Advantages from bilateral hearing in speech perception in noise with simulated cochlear implants and residual acoustic hearing</title>
       <link>/publication/jasa2013/</link>
-      <pubDate>Tue, 01 Jan 2013 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 01 Jan 2013 00:00:00 -0600</pubDate>
       
       <guid>/publication/jasa2013/</guid>
       <description></description>

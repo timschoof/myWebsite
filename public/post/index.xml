@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Tim Schoof</title>
@@ -6,10 +6,20 @@
     <description>Recent content in Posts on Tim Schoof</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 27 Jun 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 19 May 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Data Science and Statistics Books I love</title>
+      <link>/post/favourite-resources/</link>
+      <pubDate>Tue, 19 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/favourite-resources/</guid>
+      <description>body {text-align: justify}I’ve been on a bit of a learning binge recently and I’ve found that probably the most difficult thing when trying to learn something new is to find a resource that works for you. The second most difficult thing is to then actually stick with it and not get distracted by all those other amazing books and courses out there!
+Everyone’s learning path is different, so this isn’t one of those clickbaity articles with a list of “The Best Statistics and Data Science Books Everyone Must Read”.</description>
+    </item>
     
     <item>
       <title>Writing reproducible papers in R</title>
@@ -17,8 +27,8 @@
       <pubDate>Thu, 27 Jun 2019 00:00:00 +0000</pubDate>
       
       <guid>/post/reproducible-papers-r/</guid>
-      <description>Welcome to the future of paper writing!! Ok, I’ll tone down my enthusiasm, but… it’s AWESOME!!!
-You can write papers in RStudio and it’s super neat. So reproducible! It’s never been easier to embed your analyses in your manuscript. No more copy-pasting of results into a table, or trying to remember which bit of R code generated that one particular figure you’d like to tweak. It’s all in one place and if you tweak your analyses, the results are automatically updated in your manuscript.</description>
+      <description>body {text-align: justify}Welcome to the future of paper writing!! Ok, I’ll tone down my enthusiasm, but… it’s AWESOME!!!
+You can write papers in RStudio and it’s super neat. So reproducible! It’s never been easier to embed your analyses in your manuscript. No more copy-pasting of results into a table, or trying to remember which bit of R code generated that one particular figure you’d like to tweak.</description>
     </item>
     
     <item>
@@ -27,8 +37,8 @@ You can write papers in RStudio and it’s super neat. So reproducible! It’s n
       <pubDate>Mon, 08 Apr 2019 00:00:00 +0000</pubDate>
       
       <guid>/post/plotting-audiograms-in-r/</guid>
-      <description>If you’re involved in hearing science, chances are you’re plotting audiogram data for most of your publications. So why not write some code to make those plots and automate the process? Here I’ll walk you through some R code that you could use and/or adapt to plot your audiogram data.
-Getting readyFirst things first, let’s make sure you have all the require R packages installed and loaded.</description>
+      <description>body {text-align: justify}If you’re involved in hearing science, chances are you’re plotting audiogram data for most of your publications. So why not write some code to make those plots and automate the process? Here I’ll walk you through some R code that you could use and/or adapt to plot your audiogram data.
+Getting readyFirst things first, let’s make sure you have all the require R packages installed and loaded.</description>
     </item>
     
     <item>
@@ -37,8 +47,8 @@ Getting readyFirst things first, let’s make sure you have all the require R 
       <pubDate>Wed, 22 Feb 2017 00:00:00 +0000</pubDate>
       
       <guid>/post/enhancing-transparency-and-reproducibility-of-hearing-science/</guid>
-      <description>This work was presented as a poster at the American Auditory Society’s Annual Scientific and Technology Conference, 2-4 March 2017, Scottsdale, AZ. You can download a copy of the poster here.
-The National Institutes of Health have recently undertaken steps to enhance rigor and reproducibility of biomedical research. For example, grant applications are now required to explicitly address how the proposed research will achieve robust and unbiased results. Reproducibility is an integral part of science as it allows for research findings to be either validated or refuted and lets scientists successfully build upon previous research.</description>
+      <description>body {text-align: justify}This work was presented as a poster at the American Auditory Society’s Annual Scientific and Technology Conference, 2-4 March 2017, Scottsdale, AZ. You can download a copy of the poster here.
+The National Institutes of Health have recently undertaken steps to enhance rigor and reproducibility of biomedical research. For example, grant applications are now required to explicitly address how the proposed research will achieve robust and unbiased results.</description>
     </item>
     
   </channel>

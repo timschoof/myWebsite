@@ -13,13 +13,14 @@ image:
 
 
 
+<style>
+body {
+text-align: justify}
+</style>
 <p>If you’re involved in hearing science, chances are you’re plotting audiogram data for most of your publications. So why not write some code to make those plots and automate the process? Here I’ll walk you through some R code that you could use and/or adapt to plot your audiogram data.</p>
 <div id="getting-ready" class="section level2">
 <h2>Getting ready</h2>
-<div class="figure">
-<img src="https://media.giphy.com/media/26gsrnofq3K6WuETu/giphy.gif" width="300" />
-
-</div>
+<p><img src="https://media.giphy.com/media/26gsrnofq3K6WuETu/giphy.gif" width="300" /></p>
 <p>First things first, let’s make sure you have all the require R packages installed and loaded.</p>
 <pre class="r"><code>if (!require(here)) install.packages(&quot;here&quot;)
 if (!require(tidyverse)) install.packages(&quot;tidyverse&quot;)</code></pre>
@@ -99,10 +100,7 @@ if (!require(tidyverse)) install.packages(&quot;tidyverse&quot;)</code></pre>
 </div>
 <div id="cleaning-your-data" class="section level2">
 <h2>Cleaning your data</h2>
-<div class="figure">
-<img src="https://media.giphy.com/media/BW5OaeGBHVBf2/giphy.gif" width="300" />
-
-</div>
+<p><img src="https://media.giphy.com/media/BW5OaeGBHVBf2/giphy.gif" width="300" /></p>
 <p>To make things easier for ourselves when plotting the data, we’ll need to transform our data from wide to long format. We’ll want one column for participant IDs, perhaps another one indicating the participant group, test ear, test frequency, and audiometric threshold (in dB HL).</p>
 <pre class="r"><code>if(&quot;group&quot; %in% colnames(data)){
   long_data &lt;- gather(data, key = &quot;ear-freq&quot;, value = &quot;dB&quot;,-participant,-group)
@@ -143,7 +141,7 @@ if (!require(tidyverse)) install.packages(&quot;tidyverse&quot;)</code></pre>
 <p>We still have a bit of cleaning up to do!</p>
 <pre class="r"><code>d &lt;- long_data %&gt;% 
   separate(col = &quot;ear-freq&quot;, into = c(&quot;ear&quot;,&quot;freq&quot;), sep = (1))</code></pre>
-<p>Here I’m taking the <code>long_data</code> we just created and I’m “<a href="https://cran.r-project.org/web/packages/magrittr/vignettes/magrittr.html">piping</a>” or feeding it into the <code>separate</code> function. This line of code splits the “ear-freq” column into two separate columns, indicating the test ear and frequency. Note that here I’m assuming that the <code>ear-freq</code> column name in your data file can be split into two by simply taking the first character (<code>sep = (1)</code>) and separating it from the other characters in the column name. That will work in our example data set, where an example column name is <code>R500</code>, but won’t work if you’re using a different coding system (e.g. <code>Right500</code> or <code>500R</code>). You may need to use some fancy regular expressions in that case to split your columns.</p>
+<p>Here I’m taking the <code>long_data</code> we just created and I’m “<a href="https://cran.r-project.org/web/packages/magrittr/vignettes/magrittr.html">piping</a>” or feeding it into the <code>separate</code> function. This line of code splits the “ear-freq” column into two separate columns, indicating the test ear and frequency. Note that here I’m assuming that the <code>ear-freq</code> column name in your data file can be split into two by simply taking the first character (<code>sep = (1)</code>) and separating it from the other characters in the column name. That will work in our example data set, where an example column name is <code>R500</code>, but won’t work if you’re using a different coding system (e.g. <code>Right500</code> or <code>500R</code>). You may need to use some fancy regular expressions in that case to split your columns.</p>
 <table>
 <thead>
 <tr class="header">
@@ -234,10 +232,7 @@ if (!require(tidyverse)) install.packages(&quot;tidyverse&quot;)</code></pre>
 <h2>Different groups</h2>
 <p>Imagine you have an experimental group of, say, older adults with age-related hearing loss, and a control group of young university students. In this case, the hearing thresholds of the individuals in the control group are not necessarily all that interesting. Probably all you want to do is just plot the range of thresholds of the people you included. For the experimental group, on the other hand, I’d like to argue that it’s very important to show the thresholds of all individuals you included in the study, rather than just showing group means and standard deviations.</p>
 <p>Since we’ll be plotting the data for our experimental and control groups somewhat differently, it’s easiest to just create two different subsets of the data.</p>
-<div class="figure">
-<img src="https://media.giphy.com/media/n3yj8LpjbzRC0/giphy.gif" width="300" />
-
-</div>
+<p><img src="https://media.giphy.com/media/n3yj8LpjbzRC0/giphy.gif" width="300" /></p>
 <pre class="r"><code># Experimental group
 patient &lt;- d %&gt;%
   subset(group %in% &quot;patient&quot;)
@@ -260,10 +255,7 @@ control &lt;- d %&gt;%
 <div id="plotting" class="section level2">
 <h2>Plotting</h2>
 <p>Finally, we’re ready to plot some data!</p>
-<div class="figure">
-<img src="https://media.giphy.com/media/8fen5LSZcHQ5O/giphy.gif" width="300" />
-
-</div>
+<p><img src="https://media.giphy.com/media/8fen5LSZcHQ5O/giphy.gif" width="300" /></p>
 <pre class="r"><code>ggplot()+
   facet_grid(. ~ ear) +
   geom_line(data = patient, aes(x=freq, y=dB, group=participant))+
@@ -298,7 +290,8 @@ control &lt;- d %&gt;%
   scale_x_log10(breaks = unique(d$freq), labels = unique(d$freqLabels))+
   theme_bw()</code></pre>
 <p><img src="/post/2019-04-08-plotting-audiograms-in-r_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
-<p>The <code>scale_y_reverse</code> function does what it says on the tin, it flips the y-axis so that negative values are up and positive values are down. I’ve set the axis limits to to -10 and 100, and the ticks (or <code>breaks</code>) from -10 to 100, every 10 dB. The <code>scale_x_log10</code> function makes sure that our x-axis is on a log scale. I’m using the <code>freq</code> column to specify where the tick marks should. In addition I am using the <code>freqLabels</code> column to specify the labels for the tick marks (to show our kHz values without trailing zeros).</p>
+<p>The <code>scale_y_reverse</code> function does what it says on the tin, it flips the y-axis so that negative values are up and positive values are down. I’ve set the axis limits to to -10 and 100, and the ticks (or <code>breaks</code>) from -10 to 100, every 10 dB.
+The <code>scale_x_log10</code> function makes sure that our x-axis is on a log scale. I’m using the <code>freq</code> column to specify where the tick marks should. In addition I am using the <code>freqLabels</code> column to specify the labels for the tick marks (to show our kHz values without trailing zeros).</p>
 <p>For comparison, here’s what it would look like without using the <code>freqLabels</code> column to specify the labels for the tick marks.</p>
 <p><img src="/post/2019-04-08-plotting-audiograms-in-r_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
 <p>All that’s left to do now is add some axis labels and change the font size here and there.</p>

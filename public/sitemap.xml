@@ -1,10 +1,87 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
     <url>
     
       <loc>/talk/example/</loc>
       <lastmod>2030-06-01T13:00:00+01:00</lastmod>
+    </url>
+  
+    <url>
+    
+      <loc>/talk/</loc>
+      <lastmod>2030-06-01T13:00:00+01:00</lastmod>
+    </url>
+  
+    <url>
+    
+      <loc>/post/favourite-resources/</loc>
+      <lastmod>2020-05-19T00:00:00+00:00</lastmod>
+    </url>
+  
+    <url>
+    
+      <loc>/post/</loc>
+      <lastmod>2020-05-19T00:00:00+00:00</lastmod>
+    </url>
+  
+    <url>
+    
+      <loc>/authors/tim-schoof/</loc>
+      <lastmod>2020-02-01T00:00:00-06:00</lastmod>
+    </url>
+  
+    <url>
+    
+      <loc>/publication_types/2/</loc>
+      <lastmod>2020-02-01T00:00:00-06:00</lastmod>
+    </url>
+  
+    <url>
+    
+      <loc>/authors/</loc>
+      <lastmod>2020-02-01T00:00:00-06:00</lastmod>
+    </url>
+  
+    <url>
+    
+      <loc>/authors/axelle-calcus/</loc>
+      <lastmod>2020-02-01T00:00:00-06:00</lastmod>
+    </url>
+  
+    <url>
+    
+      <loc>/authors/barbara-shinn-cunningham/</loc>
+      <lastmod>2020-02-01T00:00:00-06:00</lastmod>
+    </url>
+  
+    <url>
+    
+      <loc>/authors/pamela-souza/</loc>
+      <lastmod>2020-02-01T00:00:00-06:00</lastmod>
+    </url>
+  
+    <url>
+    
+      <loc>/publication_types/</loc>
+      <lastmod>2020-02-01T00:00:00-06:00</lastmod>
+    </url>
+  
+    <url>
+    
+      <loc>/publication/</loc>
+      <lastmod>2020-02-01T00:00:00-06:00</lastmod>
+    </url>
+  
+    <url>
+    
+      <loc>/authors/stuart-rosen/</loc>
+      <lastmod>2020-02-01T00:00:00-06:00</lastmod>
+    </url>
+  
+    <url>
+    
+      <loc>/publication/earhear2019b/</loc>
+      <lastmod>2020-02-01T00:00:00-06:00</lastmod>
     </url>
   
     <url>
@@ -21,7 +98,25 @@
   
     <url>
     
-      <loc>/publication/earhear2019b/</loc>
+      <loc>/authors/dorina-strori/</loc>
+      <lastmod>2019-02-01T00:00:00-06:00</lastmod>
+    </url>
+  
+    <url>
+    
+      <loc>/authors/kathryn-arehart/</loc>
+      <lastmod>2019-02-01T00:00:00-06:00</lastmod>
+    </url>
+  
+    <url>
+    
+      <loc>/authors/lauren-balmert/</loc>
+      <lastmod>2019-02-01T00:00:00-06:00</lastmod>
+    </url>
+  
+    <url>
+    
+      <loc>/authors/melinda-anderson/</loc>
       <lastmod>2019-02-01T00:00:00-06:00</lastmod>
     </url>
   
@@ -33,13 +128,31 @@
   
     <url>
     
+      <loc>/authors/guangting-mai/</loc>
+      <lastmod>2019-01-28T00:00:00-06:00</lastmod>
+    </url>
+  
+    <url>
+    
       <loc>/publication/neuroimage2019/</loc>
       <lastmod>2019-01-28T00:00:00-06:00</lastmod>
     </url>
   
     <url>
     
+      <loc>/authors/peter-howell/</loc>
+      <lastmod>2019-01-28T00:00:00-06:00</lastmod>
+    </url>
+  
+    <url>
+    
       <loc>/publication/ija2018/</loc>
+      <lastmod>2018-11-02T00:00:00-05:00</lastmod>
+    </url>
+  
+    <url>
+    
+      <loc>/authors/varsha-rallapalli/</loc>
       <lastmod>2018-11-02T00:00:00-05:00</lastmod>
     </url>
   
@@ -69,7 +182,19 @@
   
     <url>
     
+      <loc>/</loc>
+      <lastmod>2018-06-28T00:00:00+01:00</lastmod>
+    </url>
+  
+    <url>
+    
       <loc>/publication/audiologytoday2017/</loc>
+      <lastmod>2017-03-01T00:00:00-06:00</lastmod>
+    </url>
+  
+    <url>
+    
+      <loc>/authors/jing-shen/</loc>
       <lastmod>2017-03-01T00:00:00-06:00</lastmod>
     </url>
   
@@ -82,6 +207,12 @@
     <url>
     
       <loc>/project/hhl/</loc>
+      <lastmod>2017-01-01T00:00:00+01:00</lastmod>
+    </url>
+  
+    <url>
+    
+      <loc>/project/</loc>
       <lastmod>2017-01-01T00:00:00+01:00</lastmod>
     </url>
   
@@ -117,6 +248,18 @@
   
     <url>
     
+      <loc>/authors/andrew-faulkner/</loc>
+      <lastmod>2013-01-01T00:00:00-06:00</lastmod>
+    </url>
+  
+    <url>
+    
+      <loc>/authors/tim-green/</loc>
+      <lastmod>2013-01-01T00:00:00-06:00</lastmod>
+    </url>
+  
+    <url>
+    
       <loc>/project/phd/</loc>
       <lastmod>2011-09-01T00:00:00+01:00</lastmod>
     </url>
@@ -128,156 +271,22 @@
   
     <url>
     
-      <loc>/authors/tim-schoof/</loc>
-      <lastmod>2019-02-01T00:00:00-06:00</lastmod>
-      <priority>0</priority>
-    </url>
-  
-    <url>
-    
-      <loc>/publication_types/2/</loc>
-      <lastmod>2019-02-01T00:00:00-06:00</lastmod>
-      <priority>0</priority>
-    </url>
-  
-    <url>
-    
       <loc>/authors/admin/</loc>
-      <priority>0</priority>
-    </url>
-  
-    <url>
-    
-      <loc>/authors/andrew-faulkner/</loc>
-      <lastmod>2013-01-01T00:00:00-06:00</lastmod>
-      <priority>0</priority>
     </url>
   
     <url>
     
       <loc>/author/</loc>
-      <priority>0</priority>
-    </url>
-  
-    <url>
-    
-      <loc>/authors/</loc>
-      <lastmod>2019-02-01T00:00:00-06:00</lastmod>
-      <priority>0</priority>
-    </url>
-  
-    <url>
-    
-      <loc>/authors/axelle-calcus/</loc>
-      <lastmod>2019-02-01T00:00:00-06:00</lastmod>
-      <priority>0</priority>
-    </url>
-  
-    <url>
-    
-      <loc>/authors/barbara-shinn-cunningham/</loc>
-      <lastmod>2019-02-01T00:00:00-06:00</lastmod>
-      <priority>0</priority>
     </url>
   
     <url>
     
       <loc>/categories/</loc>
-      <priority>0</priority>
-    </url>
-  
-    <url>
-    
-      <loc>/authors/dorina-strori/</loc>
-      <lastmod>2019-02-01T00:00:00-06:00</lastmod>
-      <priority>0</priority>
-    </url>
-  
-    <url>
-    
-      <loc>/authors/guangting-mai/</loc>
-      <lastmod>2019-01-28T00:00:00-06:00</lastmod>
-      <priority>0</priority>
-    </url>
-  
-    <url>
-    
-      <loc>/authors/jing-shen/</loc>
-      <lastmod>2017-03-01T00:00:00-06:00</lastmod>
-      <priority>0</priority>
-    </url>
-  
-    <url>
-    
-      <loc>/authors/kathryn-arehart/</loc>
-      <lastmod>2019-02-01T00:00:00-06:00</lastmod>
-      <priority>0</priority>
-    </url>
-  
-    <url>
-    
-      <loc>/authors/lauren-balmert/</loc>
-      <lastmod>2019-02-01T00:00:00-06:00</lastmod>
-      <priority>0</priority>
-    </url>
-  
-    <url>
-    
-      <loc>/authors/melinda-anderson/</loc>
-      <lastmod>2019-02-01T00:00:00-06:00</lastmod>
-      <priority>0</priority>
-    </url>
-  
-    <url>
-    
-      <loc>/authors/pamela-souza/</loc>
-      <lastmod>2019-02-01T00:00:00-06:00</lastmod>
-      <priority>0</priority>
-    </url>
-  
-    <url>
-    
-      <loc>/authors/peter-howell/</loc>
-      <lastmod>2019-01-28T00:00:00-06:00</lastmod>
-      <priority>0</priority>
-    </url>
-  
-    <url>
-    
-      <loc>/post/</loc>
-      <lastmod>2019-06-27T00:00:00+00:00</lastmod>
-    </url>
-  
-    <url>
-    
-      <loc>/project/</loc>
-      <lastmod>2017-01-01T00:00:00+01:00</lastmod>
-      <priority>0</priority>
-    </url>
-  
-    <url>
-    
-      <loc>/publication_types/</loc>
-      <lastmod>2019-02-01T00:00:00-06:00</lastmod>
-      <priority>0</priority>
-    </url>
-  
-    <url>
-    
-      <loc>/publication/</loc>
-      <lastmod>2019-02-01T00:00:00-06:00</lastmod>
-    </url>
-  
-    <url>
-    
-      <loc>/talk/</loc>
-      <lastmod>2030-06-01T13:00:00+01:00</lastmod>
     </url>
   
     <url>
     
       <loc>/slides/</loc>
-      <priority>0</priority>
     </url>
   
     <url>
@@ -287,36 +296,7 @@
   
     <url>
     
-      <loc>/authors/stuart-rosen/</loc>
-      <lastmod>2019-02-01T00:00:00-06:00</lastmod>
-      <priority>0</priority>
-    </url>
-  
-    <url>
-    
       <loc>/tags/</loc>
-      <priority>0</priority>
-    </url>
-  
-    <url>
-    
-      <loc>/authors/tim-green/</loc>
-      <lastmod>2013-01-01T00:00:00-06:00</lastmod>
-      <priority>0</priority>
-    </url>
-  
-    <url>
-    
-      <loc>/</loc>
-      <lastmod>2030-06-01T13:00:00+01:00</lastmod>
-      <priority>0</priority>
-    </url>
-  
-    <url>
-    
-      <loc>/authors/varsha-rallapalli/</loc>
-      <lastmod>2018-11-02T00:00:00-05:00</lastmod>
-      <priority>0</priority>
     </url>
   
 </urlset>

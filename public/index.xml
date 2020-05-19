@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tim Schoof on Tim Schoof</title>
@@ -6,531 +5,51 @@
     <description>Recent content in Tim Schoof on Tim Schoof</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 01 Jun 2030 13:00:00 +0100</lastBuildDate>
+    <lastBuildDate>Thu, 28 Jun 2018 00:00:00 +0100</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>Example Talk</title>
-      <link>/talk/example/</link>
+      <title>Recent &amp; Upcoming Talks</title>
+      <link>/talk/</link>
       <pubDate>Sat, 01 Jun 2030 13:00:00 +0100</pubDate>
       
-      <guid>/talk/example/</guid>
-      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;div&gt;
-    &lt;p&gt;Click on the &lt;strong&gt;Slides&lt;/strong&gt; button above to view the built-in slides feature.&lt;/p&gt;
-
-  &lt;/div&gt;
-&lt;/div&gt;
-
-
-&lt;p&gt;Slides can be added in a few ways:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Create&lt;/strong&gt; slides using Academic&amp;rsquo;s &lt;em&gt;Slides&lt;/em&gt; feature and link using &lt;code&gt;url_slides&lt;/code&gt; parameter in the front matter of the talk file&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Upload&lt;/strong&gt; an existing slide deck to &lt;code&gt;static/&lt;/code&gt; and link using &lt;code&gt;url_slides&lt;/code&gt; parameter in the front matter of the talk file&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Embed&lt;/strong&gt; your slides (e.g. Google Slides) or presentation video on this page using &lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/&#34; target=&#34;_blank&#34;&gt;shortcodes&lt;/a&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Further talk details can easily be added to this page using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Writing reproducible papers in R</title>
-      <link>/post/reproducible-papers-r/</link>
-      <pubDate>Thu, 27 Jun 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/post/reproducible-papers-r/</guid>
-      <description>
-
-
-&lt;p&gt;Welcome to the future of paper writing!! Ok, I’ll tone down my enthusiasm, but… it’s AWESOME!!!&lt;/p&gt;
-&lt;p&gt;You can write papers in RStudio and it’s super neat. So reproducible! It’s never been easier to embed your analyses in your manuscript. No more copy-pasting of results into a table, or trying to remember which bit of R code generated that one particular figure you’d like to tweak. It’s all in one place and if you tweak your analyses, the results are automatically updated in your manuscript. Magic.&lt;/p&gt;
-&lt;p&gt;I’m sure there are lots of different ways to go about this successfully, but here’s what’s working well for me. I’ve started using the &lt;a href=&#34;https://github.com/crsh/papaja&#34;&gt;papaja&lt;/a&gt; (Preparing APA Journal Articles) R package. It’s basically a template to produce documents that follow APA manuscript guidelines. In other words, you can write something in R that’s publication ready!&lt;/p&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://media.giphy.com/media/3ornjYwRBH1R62NetG/giphy.gif&#34; width=&#34;300&#34; /&gt;
-
-&lt;/div&gt;
-&lt;div id=&#34;getting-started&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Getting started&lt;/h2&gt;
-&lt;p&gt;First, make sure you have the latest versions of R and RStudio installed – always a good idea.&lt;/p&gt;
-&lt;p&gt;Next, it’s time to install the package! You can do this by typing the following into your RStudio command window:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Install devtools package if necessary
-if(!&amp;quot;devtools&amp;quot; %in% rownames(installed.packages())) install.packages(&amp;quot;devtools&amp;quot;)
-
-# Install the stable development verions from GitHub
-devtools::install_github(&amp;quot;crsh/papaja&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;The installation procedure will probably ask you if you want to update / install a bunch of packages. You’ll need to update / install all the suggested packages, otherwise it won’t install papaja. So: select ‘All’. This didn’t actually work for me, but you might have more luck. Instead, I ended up installing all the required packages by hand: &lt;code&gt;install.packages(“PackageName”)&lt;/code&gt;. I then tried again. Eventually, it stopped suggesting packages I should update and it worked.&lt;/p&gt;
-&lt;p&gt;Yay, you managed to do the hardest bit, you installed the package!&lt;/p&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://media.giphy.com/media/P9AcFvOP8zByE/giphy.gif&#34; width=&#34;300&#34; /&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id=&#34;setting-up-your-rstudio&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Setting up your RStudio&lt;/h2&gt;
-&lt;p&gt;While I have your attention, I’m going to suggest making some changes to your RStudio default settings that will help you be more reproducible.&lt;/p&gt;
-&lt;p&gt;Click on &lt;strong&gt;Tools&lt;/strong&gt; &amp;gt; &lt;strong&gt;Global Options&lt;/strong&gt;. In the &lt;strong&gt;General&lt;/strong&gt; tab, uncheck the following:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Restore .RData into workspace at startup&lt;/li&gt;
-&lt;li&gt;Always save history (even when not saving .RData)&lt;/li&gt;
-&lt;li&gt;Remove duplicate entries in history&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;And set ‘Save workspace to .RData on exit’ to ‘Never’.&lt;/p&gt;
-&lt;p&gt;You’re just making sure that you’re no longer saving (and reloading) any objects and other things that you’ve create in your R session that aren’t actually in your scripts. This is especially important once you start sharing your code!&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;optimise-your-workflow&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Optimise your workflow&lt;/h2&gt;
-&lt;p&gt;Whenever you start a new research project, with a set of analyses and a reproducible manuscript, start a new RStudio Project. There are quite a few advantages to this. Mainly, it will resolve any file path problems, which is especially important if you want your code to run on someone else’s computer.&lt;/p&gt;
-&lt;p&gt;To create a new RStudio Project, click on &lt;strong&gt;file&lt;/strong&gt; &amp;gt; &lt;strong&gt;new project&lt;/strong&gt; &amp;gt; &lt;strong&gt;new directory&lt;/strong&gt; &amp;gt; &lt;strong&gt;new project&lt;/strong&gt; &amp;gt; &lt;strong&gt;name your project&lt;/strong&gt; &amp;gt; &lt;strong&gt;create project&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;You’ll now see that you’ve created a .Proj file, which is basically your project’s RStudio start-up file. Whenever you want to continue working on this project, just click on the .Proj file and RStudio will start a new session of R and will set the working directory to the project directory. It also restores any RStudio settings you may have specified.&lt;/p&gt;
-&lt;p&gt;It’s good practice to put everything that’s relevant to your project in this project folder, or at least your data and your R code. This not only makes it easier to write your reproducible document, it also makes it much easier to share your data and code with the scientific community in one go later on.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;writing-at-last&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Writing, at last!&lt;/h2&gt;
-&lt;p&gt;The GitHub page for the &lt;a href=&#34;https://github.com/crsh/papaja&#34;&gt;papaja&lt;/a&gt; package explains exactly how to get started. There’s also a very handy &lt;a href=&#34;https://crsh.github.io/papaja_man/introduction.html#getting-started&#34;&gt;user manual&lt;/a&gt; for the package. In short, however, to create a new R Markdown file using the papaja APA template, click on &lt;strong&gt;File&lt;/strong&gt; &amp;gt; &lt;strong&gt;New File&lt;/strong&gt; &amp;gt; &lt;strong&gt;R Markdown&lt;/strong&gt; &amp;gt; &lt;strong&gt;From Templatev and select &lt;/strong&gt;APA article (6th edition)**.&lt;/p&gt;
-&lt;p&gt;Now just start typing :-)&lt;/p&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://media.giphy.com/media/XIqCQx02E1U9W/giphy.gif&#34; width=&#34;300&#34; /&gt;
-
-&lt;/div&gt;
-&lt;p&gt;Of course writing a document in R is a little bit different from writing Word document. In fact, it’s more like writing a LaTeX document. Don’t let this freak you out, it’s a learning curve that you can handle!&lt;/p&gt;
-&lt;p&gt;The new RMarkdown file you have just created has a basic structure to it, which will help you get going. The first section (called the YAML), surrounded by &lt;code&gt;---&lt;/code&gt;, contains metadata such as your paper’s title, author names, and abstract. This is also where you can tell RStudio to load any LaTeX packages that you want to use.&lt;/p&gt;
-&lt;div id=&#34;rmarkdown-and-latex&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;RMarkdown and LaTeX&lt;/h3&gt;
-&lt;p&gt;To get to grips with the basics of RMarkdown, check out &lt;a href=&#34;https://rmarkdown.rstudio.com/lesson-1.html&#34;&gt;this tutorial&lt;/a&gt; on the RStudio website. It’s quite short. There’s also a very handy &lt;a href=&#34;https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf&#34;&gt;cheat sheet&lt;/a&gt; for when you’ve forgotten how to create a new header or a numbered list, or how to use italics.&lt;/p&gt;
-&lt;p&gt;Within RMarkdown, especially if you’re generating a PDF file, you can also use LaTeX commands. This can be very helpful if you want to include a mathematical formula or Greek letters for example. This is just to say that if you’re trying something and it doesn’t work, you may want to add the word ‘LaTeX’ to your Google search term.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;embedding-r-code&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Embedding R code&lt;/h3&gt;
-&lt;p&gt;The main draw of writing your manuscripts in R is of course that you can easily embed R code. So how do you go about that?&lt;/p&gt;
-&lt;p&gt;You create something called a &lt;code&gt;code chunk&lt;/code&gt; in your .rmd file, where you surround your R code with &lt;code&gt;```r&lt;/code&gt; and &lt;code&gt;```&lt;/code&gt; as follows:&lt;/p&gt;
-&lt;pre class=&#34;markdown&#34;&gt;&lt;code&gt;```{r}
-# plot something
-plot(cars)
-```&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;The first line tells RMarkdown to expect some R code coming up. You can add lots of parameters in the curly brackets there, including figure captions, and instructions on whether to display the code or warning messages in your document. The &lt;a href=&#34;https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf&#34;&gt;cheat sheet&lt;/a&gt; shows you all the options.&lt;/p&gt;
-&lt;p&gt;Instead of typing your R code in this chunk, you can also pull some code from an external script (preferably in the same project folder). You can do this using the &lt;code&gt;read_chunk&lt;/code&gt; function. In your manuscript, create a code chunk that reads in this external script:&lt;/p&gt;
-&lt;pre class=&#34;markdown&#34;&gt;&lt;code&gt;```{r external, include = FALSE}
-knitr::read_chunk(&amp;quot;myScript.R&amp;quot;)
-```&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;You can then run subsections of this external script as follows:&lt;/p&gt;
-&lt;pre class=&#34;markdown&#34;&gt;&lt;code&gt;```{r plot-audiogram}
-```&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;You just need to name the different sections in your external R script so R knows exactly which bits you want to pull into your manuscript. Here I’m calling a code chunk called &lt;code&gt;plot-audiogram&lt;/code&gt; from &lt;code&gt;myScript.R&lt;/code&gt;. In myScript, the relevant code is indicated as follows:&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;## ---- plot-audiogram&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Side note: the opposite of &lt;code&gt;read_chunk&lt;/code&gt; is &lt;code&gt;purl&lt;/code&gt;, which extracts all R code chunks from your RMarkdown document and puts it in a separate R file.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;generating-output-files&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Generating output files&lt;/h3&gt;
-&lt;p&gt;To turn your RMarkdown file (.rmd) into a PDF or LaTeX file, just click on &lt;strong&gt;knit&lt;/strong&gt;. Also, all the figures you embeded into your manuscript will be saved as PDFs into a separate folder. Super convenient! Now just sit back, relax, and watch the error messages come in ;-)&lt;/p&gt;
-&lt;p&gt;When the time comes to submit your manuscript, most journals will allow you to submit a LaTeX file. However, if your journal of choice only allows you to submit Word documents, don’t despair, you should be able to render Word documents too (although it’s less streamlined). And if not, there is an R package that should be able to come to the rescue! I haven’t tried it yet, but check out the &lt;a href=&#34;https://github.com/noamross/redoc&#34;&gt;redoc&lt;/a&gt; package. It apparently generates Word documents that can be de-rendered back into R Markdown, retaining edits on the Word document, including tracked changes. Great for collaborating with people who might not be ready to hop on the R train.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id=&#34;version-control&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;Version control&lt;/h1&gt;
-&lt;p&gt;To be extra cool, put everything in a GitHub repository! No, seriously, not just for the street cred, it’s actually useful. You can have them set to private if you’re at an educational institution.&lt;/p&gt;
-&lt;div id=&#34;useful-resources&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Useful resources&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Papaja package: &lt;a href=&#34;https://github.com/crsh/papaja&#34; class=&#34;uri&#34;&gt;https://github.com/crsh/papaja&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Papaja user manual with more details about writing papers in RStudio, including how to cite papers: &lt;a href=&#34;https://crsh.github.io/papaja_man/introduction.html#getting-started&#34; class=&#34;uri&#34;&gt;https://crsh.github.io/papaja_man/introduction.html#getting-started&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Read more about workflows and RMarkdown in Nicholas Tierney’s &lt;a href=&#34;https://rmd4sci.njtierney.com/workflow.html&#34;&gt;short book&lt;/a&gt; about RMarkdown, which is specifically aimed at scientists.&lt;/li&gt;
-&lt;li&gt;I encourage you to read this great &lt;a href=&#34;https://www.tidyverse.org/articles/2017/12/workflow-vs-script/&#34;&gt;blog post&lt;/a&gt; by Jenny Bryan.&lt;/li&gt;
-&lt;li&gt;Get to grips with RMarkdown: &lt;a href=&#34;https://rmarkdown.rstudio.com/lesson-1.html&#34; class=&#34;uri&#34;&gt;https://rmarkdown.rstudio.com/lesson-1.html&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;RMarkdown cheat sheet: &lt;a href=&#34;https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf&#34; class=&#34;uri&#34;&gt;https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;redoc R package: &lt;a href=&#34;https://github.com/noamross/redoc&#34; class=&#34;uri&#34;&gt;https://github.com/noamross/redoc&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Plotting audiograms in R</title>
-      <link>/post/plotting-audiograms-in-r/</link>
-      <pubDate>Mon, 08 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/post/plotting-audiograms-in-r/</guid>
-      <description>
-
-
-&lt;p&gt;If you’re involved in hearing science, chances are you’re plotting audiogram data for most of your publications. So why not write some code to make those plots and automate the process? Here I’ll walk you through some R code that you could use and/or adapt to plot your audiogram data.&lt;/p&gt;
-&lt;div id=&#34;getting-ready&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Getting ready&lt;/h2&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://media.giphy.com/media/26gsrnofq3K6WuETu/giphy.gif&#34; width=&#34;300&#34; /&gt;
-
-&lt;/div&gt;
-&lt;p&gt;First things first, let’s make sure you have all the require R packages installed and loaded.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;if (!require(here)) install.packages(&amp;quot;here&amp;quot;)
-if (!require(tidyverse)) install.packages(&amp;quot;tidyverse&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Next, let’s read in our data file. I’m going to assume that you have saved your data in a .csv file in the following format: one row per participant, with one column with participant IDs, perhaps another one indicating participant group, and the other columns indicating test ear and frequency. In other words, I’m assuming your data is in wide format.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;data&amp;lt;-read.csv(here(paste(csvFile,&amp;quot;.csv&amp;quot;,sep=&amp;quot;&amp;quot;)),header=T)&lt;/code&gt;&lt;/pre&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr class=&#34;header&#34;&gt;
-&lt;th align=&#34;left&#34;&gt;participant&lt;/th&gt;
-&lt;th align=&#34;left&#34;&gt;group&lt;/th&gt;
-&lt;th align=&#34;right&#34;&gt;R250&lt;/th&gt;
-&lt;th align=&#34;right&#34;&gt;R500&lt;/th&gt;
-&lt;th align=&#34;right&#34;&gt;R1000&lt;/th&gt;
-&lt;th align=&#34;right&#34;&gt;R2000&lt;/th&gt;
-&lt;th align=&#34;right&#34;&gt;R4000&lt;/th&gt;
-&lt;th align=&#34;right&#34;&gt;R8000&lt;/th&gt;
-&lt;th align=&#34;right&#34;&gt;L250&lt;/th&gt;
-&lt;th align=&#34;right&#34;&gt;L500&lt;/th&gt;
-&lt;th align=&#34;right&#34;&gt;L1000&lt;/th&gt;
-&lt;th align=&#34;right&#34;&gt;L2000&lt;/th&gt;
-&lt;th align=&#34;right&#34;&gt;L4000&lt;/th&gt;
-&lt;th align=&#34;right&#34;&gt;L8000&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr class=&#34;odd&#34;&gt;
-&lt;td align=&#34;left&#34;&gt;P01&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;patient&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;40&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;40&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;50&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;55&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;55&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;95&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;30&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;30&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;35&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;40&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;70&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;80&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;even&#34;&gt;
-&lt;td align=&#34;left&#34;&gt;P02&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;patient&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;40&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;30&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;40&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;60&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;65&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;45&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;25&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;25&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;30&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;35&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;65&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;45&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;odd&#34;&gt;
-&lt;td align=&#34;left&#34;&gt;P03&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;patient&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;20&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;20&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;20&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;35&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;25&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;85&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;15&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;25&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;35&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;55&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;75&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;80&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;The &lt;code&gt;here&lt;/code&gt; package is pretty neat. It helps you avoid having to specify your working directory, and other file paths that are specific to your local computer. It makes the code more likely to work on someone else computer without them having to go through your code and changing all the hard-coded file paths that might be lurking around in there. Also, I don’t want Jenny Bryan to &lt;a href=&#34;https://www.tidyverse.org/articles/2017/12/workflow-vs-script/&#34;&gt;set my computer on fire&lt;/a&gt;, so there’s that.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;cleaning-your-data&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Cleaning your data&lt;/h2&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://media.giphy.com/media/BW5OaeGBHVBf2/giphy.gif&#34; width=&#34;300&#34; /&gt;
-
-&lt;/div&gt;
-&lt;p&gt;To make things easier for ourselves when plotting the data, we’ll need to transform our data from wide to long format. We’ll want one column for participant IDs, perhaps another one indicating the participant group, test ear, test frequency, and audiometric threshold (in dB HL).&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;if(&amp;quot;group&amp;quot; %in% colnames(data)){
-  long_data &amp;lt;- gather(data, key = &amp;quot;ear-freq&amp;quot;, value = &amp;quot;dB&amp;quot;,-participant,-group)
-} else {
-  long_data &amp;lt;- gather(data, key = &amp;quot;ear-freq&amp;quot;, value = &amp;quot;dB&amp;quot;,-participant)
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Here I’m using the &lt;code&gt;gather&lt;/code&gt; function to reshape our dataset from wide to long format. We’re leaving the participant and, if it exists, the group columns more or less untouched. All the other columns will be gathered up and the values will be dropped into the dB column and the column names (i.e. the keys) will be dropped into the &lt;code&gt;ear-freq&lt;/code&gt; column. The output of all of this is assigned to a new variable, &lt;code&gt;long_data&lt;/code&gt;.&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr class=&#34;header&#34;&gt;
-&lt;th align=&#34;left&#34;&gt;participant&lt;/th&gt;
-&lt;th align=&#34;left&#34;&gt;group&lt;/th&gt;
-&lt;th align=&#34;left&#34;&gt;ear-freq&lt;/th&gt;
-&lt;th align=&#34;right&#34;&gt;dB&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr class=&#34;odd&#34;&gt;
-&lt;td align=&#34;left&#34;&gt;P01&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;patient&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;R250&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;40&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;even&#34;&gt;
-&lt;td align=&#34;left&#34;&gt;P02&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;patient&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;R250&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;40&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;odd&#34;&gt;
-&lt;td align=&#34;left&#34;&gt;P03&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;patient&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;R250&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;20&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;We still have a bit of cleaning up to do!&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;d &amp;lt;- long_data %&amp;gt;% 
-  separate(col = &amp;quot;ear-freq&amp;quot;, into = c(&amp;quot;ear&amp;quot;,&amp;quot;freq&amp;quot;), sep = (1))&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Here I’m taking the &lt;code&gt;long_data&lt;/code&gt; we just created and I’m “&lt;a href=&#34;https://cran.r-project.org/web/packages/magrittr/vignettes/magrittr.html&#34;&gt;piping&lt;/a&gt;” or feeding it into the &lt;code&gt;separate&lt;/code&gt; function. This line of code splits the “ear-freq” column into two separate columns, indicating the test ear and frequency. Note that here I’m assuming that the &lt;code&gt;ear-freq&lt;/code&gt; column name in your data file can be split into two by simply taking the first character (&lt;code&gt;sep = (1)&lt;/code&gt;) and separating it from the other characters in the column name. That will work in our example data set, where an example column name is &lt;code&gt;R500&lt;/code&gt;, but won’t work if you’re using a different coding system (e.g. &lt;code&gt;Right500&lt;/code&gt; or &lt;code&gt;500R&lt;/code&gt;). You may need to use some fancy regular expressions in that case to split your columns.&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr class=&#34;header&#34;&gt;
-&lt;th align=&#34;left&#34;&gt;participant&lt;/th&gt;
-&lt;th align=&#34;left&#34;&gt;group&lt;/th&gt;
-&lt;th align=&#34;left&#34;&gt;ear&lt;/th&gt;
-&lt;th align=&#34;left&#34;&gt;freq&lt;/th&gt;
-&lt;th align=&#34;right&#34;&gt;dB&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr class=&#34;odd&#34;&gt;
-&lt;td align=&#34;left&#34;&gt;P01&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;patient&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;R&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;250&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;40&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;even&#34;&gt;
-&lt;td align=&#34;left&#34;&gt;P02&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;patient&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;R&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;250&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;40&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;odd&#34;&gt;
-&lt;td align=&#34;left&#34;&gt;P03&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;patient&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;R&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;250&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;20&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;Let’s extend this bit of code and continue cleaning.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;d &amp;lt;- long_data %&amp;gt;% 
-  separate(col = &amp;quot;ear-freq&amp;quot;, into = c(&amp;quot;ear&amp;quot;,&amp;quot;freq&amp;quot;), sep = (1)) %&amp;gt;%
-  mutate(freq = (type.convert(freq))/1000) %&amp;gt;% 
-  mutate(freqLabels = formatC(freq, format=&amp;quot;g&amp;quot;)) &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Next, I’m ‘mutating’, or transforming, the data a bit further. I’m taking the values in the &lt;code&gt;freq&lt;/code&gt; column and converting them to kHz by dividing the values by 1000. A funny thing happens. Our values have trailing zeros (e.g. 8.00 kHz). That would look a bit silly in our figure. So, let’s create a new column that contains the exact same values, but without any trailing zeros. The &lt;code&gt;formatC&lt;/code&gt; function turns our numeric values into characters, so we’ll just use this column for our axis tick labels when we plot our data.&lt;/p&gt;
-&lt;p&gt;The only thing left to clean is our &lt;code&gt;ear&lt;/code&gt; column. We’re simply turning this column into a factor and changing ‘R’ to ‘Right’ and ‘L’ to ‘Left’.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;d &amp;lt;- long_data %&amp;gt;% 
-  separate(col = &amp;quot;ear-freq&amp;quot;, into = c(&amp;quot;ear&amp;quot;,&amp;quot;freq&amp;quot;), sep = (1)) %&amp;gt;%
-  mutate(freq = (type.convert(freq))/1000) %&amp;gt;% 
-  mutate(freqLabels = formatC(freq, format=&amp;quot;g&amp;quot;)) %&amp;gt;% 
-  mutate(ear = factor(ear, levels = c(&amp;quot;R&amp;quot;, &amp;quot;L&amp;quot;))) %&amp;gt;%
-  mutate(ear = recode(ear, &amp;quot;R&amp;quot; = &amp;quot;Right&amp;quot;, &amp;quot;L&amp;quot; = &amp;quot;Left&amp;quot;)) &lt;/code&gt;&lt;/pre&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr class=&#34;header&#34;&gt;
-&lt;th align=&#34;left&#34;&gt;participant&lt;/th&gt;
-&lt;th align=&#34;left&#34;&gt;group&lt;/th&gt;
-&lt;th align=&#34;left&#34;&gt;ear&lt;/th&gt;
-&lt;th align=&#34;right&#34;&gt;freq&lt;/th&gt;
-&lt;th align=&#34;right&#34;&gt;dB&lt;/th&gt;
-&lt;th align=&#34;left&#34;&gt;freqLabels&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr class=&#34;odd&#34;&gt;
-&lt;td align=&#34;left&#34;&gt;P01&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;patient&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;Right&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;0.25&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;40&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;0.25&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;even&#34;&gt;
-&lt;td align=&#34;left&#34;&gt;P02&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;patient&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;Right&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;0.25&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;40&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;0.25&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;odd&#34;&gt;
-&lt;td align=&#34;left&#34;&gt;P03&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;patient&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;Right&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;0.25&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;20&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;0.25&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;/div&gt;
-&lt;div id=&#34;different-groups&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Different groups&lt;/h2&gt;
-&lt;p&gt;Imagine you have an experimental group of, say, older adults with age-related hearing loss, and a control group of young university students. In this case, the hearing thresholds of the individuals in the control group are not necessarily all that interesting. Probably all you want to do is just plot the range of thresholds of the people you included. For the experimental group, on the other hand, I’d like to argue that it’s very important to show the thresholds of all individuals you included in the study, rather than just showing group means and standard deviations.&lt;/p&gt;
-&lt;p&gt;Since we’ll be plotting the data for our experimental and control groups somewhat differently, it’s easiest to just create two different subsets of the data.&lt;/p&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://media.giphy.com/media/n3yj8LpjbzRC0/giphy.gif&#34; width=&#34;300&#34; /&gt;
-
-&lt;/div&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Experimental group
-patient &amp;lt;- d %&amp;gt;%
-  subset(group %in% &amp;quot;patient&amp;quot;)
-
-# Control group
-control &amp;lt;- d %&amp;gt;%
-  subset(group %in% &amp;quot;control&amp;quot;) %&amp;gt;% 
-  group_by(freq, ear) %&amp;gt;% 
-  summarize(mindB = min(dB), maxdB = max(dB)) %&amp;gt;% 
-  gather(key = &amp;quot;MinMax&amp;quot;, value = &amp;quot;dB&amp;quot;,-freq, -ear)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;For the control group, we need to do a little bit more. We need to compute the minimum and maximum thresholds for each frequency to be able to plot the range. Let’s extend our code as follows:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Control group
-control &amp;lt;- d %&amp;gt;%
-  subset(group %in% &amp;quot;control&amp;quot;) %&amp;gt;% 
-  group_by(freq, ear) %&amp;gt;% 
-  summarize(mindB = min(dB), maxdB = max(dB)) %&amp;gt;% 
-  gather(key = &amp;quot;MinMax&amp;quot;, value = &amp;quot;dB&amp;quot;,-freq, -ear)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Here I am grouping the data by frequency and ear. It’s a little bit as if I’m taking subsets of the data, but it allows me to do the same computation on each of these subsets simultaneously. Next, I’m computing some summary statistics - the minimum and maximum - on the data for each ear and frequency combination separately. The last thing I need to do is make sure the data is in a long format, so we’ll use &lt;code&gt;gather&lt;/code&gt; again here. We’ll end up with a frequency, ear, and dB column, as well as a min-max column that indicates whether the dB value is the minimum or maximum threshold within the group.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;plotting&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Plotting&lt;/h2&gt;
-&lt;p&gt;Finally, we’re ready to plot some data!&lt;/p&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://media.giphy.com/media/8fen5LSZcHQ5O/giphy.gif&#34; width=&#34;300&#34; /&gt;
-
-&lt;/div&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ggplot()+
-  facet_grid(. ~ ear) +
-  geom_line(data = patient, aes(x=freq, y=dB, group=participant))+
-  stat_summary(data = patient,
-               aes(x=freq, y=dB,group=ear), 
-               fun.y=mean, 
-               geom=&amp;quot;line&amp;quot;, lwd = 1.5)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2019-04-08-plotting-audiograms-in-r_files/figure-html/unnamed-chunk-14-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;We’ll be using &lt;code&gt;ggplot&lt;/code&gt; to plot our data. This bit of code creates two subplots, one for each ear, using the &lt;code&gt;facet_grid&lt;/code&gt; function. It then creates a line plot for the experimental group’s data (the ‘patient’ subset), with frequency along the x-axis, thresholds (dB HL) along the y-axis, and an individual line for each participant (&lt;code&gt;group = participant&lt;/code&gt;). In addition, using the &lt;code&gt;stat_summary&lt;/code&gt; function, we’re able to plot a thicker line (&lt;code&gt;geom = line, lwd = 1.5&lt;/code&gt;) showing the mean for the group (&lt;code&gt;fun.y = mean&lt;/code&gt;).&lt;/p&gt;
-&lt;p&gt;Next, let’s add the control group’s data to that.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ggplot()+
-  facet_grid(. ~ ear) +
-  geom_line(data = patient, aes(x=freq, y=dB, group=participant))+
-  stat_summary(data = patient,
-               aes(x=freq, y=dB,group=ear), 
-               fun.y=mean, 
-               geom=&amp;quot;line&amp;quot;, lwd = 1.5)+
-  geom_area(data = control, aes(x=freq, y=dB, group=MinMax),fill=&amp;quot;grey&amp;quot;, alpha=.7)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2019-04-08-plotting-audiograms-in-r_files/figure-html/unnamed-chunk-15-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;To create a shaded area, we’ll need to use the &lt;code&gt;geom_area&lt;/code&gt; function. We’re specifying that we’re using the control group’s data. Our ‘group’ here corresponds to the ‘MinMax’ column, which just indicates whether the dB value is the upper or lower boundaries of our shaded area. The shaded area will be plotted in grey, with 70% transparency (&lt;code&gt;alpha = .7&lt;/code&gt;).&lt;/p&gt;
-&lt;p&gt;The graph doesn’t quite look ready for publication…&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ggplot()+
-  facet_grid(. ~ ear) +
-  geom_line(data = patient, aes(x=freq, y=dB, group=participant))+
-  stat_summary(data = patient,
-               aes(x=freq, y=dB,group=ear), 
-               fun.y=mean, 
-               geom=&amp;quot;line&amp;quot;, lwd = 1.5)+ 
-  geom_area(data = control, aes(x=freq, y=dB, group=MinMax),
-              fill=&amp;quot;grey&amp;quot;, alpha=.7)+ 
-  scale_y_reverse(limits = c(100,-10), breaks = seq(-10, 100, by=10))+
-  scale_x_log10(breaks = unique(d$freq), labels = unique(d$freqLabels))+
-  theme_bw()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2019-04-08-plotting-audiograms-in-r_files/figure-html/unnamed-chunk-16-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;The &lt;code&gt;scale_y_reverse&lt;/code&gt; function does what it says on the tin, it flips the y-axis so that negative values are up and positive values are down. I’ve set the axis limits to to -10 and 100, and the ticks (or &lt;code&gt;breaks&lt;/code&gt;) from -10 to 100, every 10 dB. The &lt;code&gt;scale_x_log10&lt;/code&gt; function makes sure that our x-axis is on a log scale. I’m using the &lt;code&gt;freq&lt;/code&gt; column to specify where the tick marks should. In addition I am using the &lt;code&gt;freqLabels&lt;/code&gt; column to specify the labels for the tick marks (to show our kHz values without trailing zeros).&lt;/p&gt;
-&lt;p&gt;For comparison, here’s what it would look like without using the &lt;code&gt;freqLabels&lt;/code&gt; column to specify the labels for the tick marks.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2019-04-08-plotting-audiograms-in-r_files/figure-html/unnamed-chunk-17-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;All that’s left to do now is add some axis labels and change the font size here and there.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ggplot()+
-  facet_grid(. ~ ear) +
-  geom_line(data = patient, aes(x=freq, y=dB, group=participant))+
-  stat_summary(data = patient,
-               aes(x=freq, y=dB,group=ear), 
-               fun.y=mean, 
-               geom=&amp;quot;line&amp;quot;, lwd = 1.5)+ 
-  geom_area(data = control, aes(x=freq, y=dB, group=MinMax),
-              fill=&amp;quot;grey&amp;quot;, alpha=.7)+ 
-  scale_y_reverse(limits = c(100,-10), breaks = seq(-10, 100, by=10))+
-  scale_x_log10(breaks =unique(d$freq), labels = unique(d$freqLabels))+
-  theme_bw()+
-  theme(axis.text=element_text(size=12),
-        axis.title=element_text(size=14),
-        strip.text.x = element_text(size = 12))+
-  labs(x = &amp;quot;Frequency (kHz)&amp;quot;, y = &amp;quot;Threshold (dB HL)&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2019-04-08-plotting-audiograms-in-r_files/figure-html/unnamed-chunk-18-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;Your audiogram figure is ready for publication!&lt;/p&gt;
-&lt;div id=&#34;the-code-with-some-more-practical-instructions-on-how-to-run-it-is-available-on-my-github-page.&#34; class=&#34;section level4&#34;&gt;
-&lt;h4&gt;The code (with some more practical instructions on how to run it) is available on &lt;a href=&#34;https://github.com/timschoof/PlotAudiogram&#34;&gt;my github page&lt;/a&gt;.&lt;/h4&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Switching streams across ears to evaluate informational masking of speech-on-speech</title>
-      <link>/publication/earhear2019b/</link>
-      <pubDate>Fri, 01 Feb 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/publication/earhear2019b/</guid>
+      <guid>/talk/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Understanding variability in individual response to hearing aid signal processing in wearable hearing aids</title>
-      <link>/publication/earhear2019a/</link>
-      <pubDate>Fri, 01 Feb 2019 00:00:00 +0000</pubDate>
+      <title>Posts</title>
+      <link>/post/</link>
+      <pubDate>Tue, 19 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>/publication/earhear2019a/</guid>
+      <guid>/post/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Modulation of phase-locked neural responses to speech during different arousal states is age-dependent</title>
-      <link>/publication/neuroimage2019/</link>
-      <pubDate>Mon, 28 Jan 2019 00:00:00 +0000</pubDate>
+      <title>Publications</title>
+      <link>/publication/</link>
+      <pubDate>Sat, 01 Feb 2020 00:00:00 -0600</pubDate>
       
-      <guid>/publication/neuroimage2019/</guid>
+      <guid>/publication/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>The use of self-report measures to examine changes in perception in response to fittings using different signal processing parameters</title>
-      <link>/publication/ija2018/</link>
-      <pubDate>Fri, 02 Nov 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/publication/ija2018/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Multitasking with typical use of hearing aid noise reduction in older listeners</title>
-      <link>/publication/psyarxiv2018/</link>
-      <pubDate>Mon, 01 Oct 2018 00:00:00 +0100</pubDate>
-      
-      <guid>/publication/psyarxiv2018/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Example Page</title>
-      <link>/tutorial/example/</link>
+      <title>Overview</title>
+      <link>/tutorial/</link>
       <pubDate>Sun, 09 Sep 2018 00:00:00 +0100</pubDate>
       
-      <guid>/tutorial/example/</guid>
-      <description>
-
-&lt;p&gt;In this tutorial, I&amp;rsquo;ll share my top 10 tips for getting started with Academic:&lt;/p&gt;
-
-&lt;h2 id=&#34;tip-1&#34;&gt;Tip 1&lt;/h2&gt;
-
-&lt;p&gt;&amp;hellip;&lt;/p&gt;
-
-&lt;h2 id=&#34;tip-2&#34;&gt;Tip 2&lt;/h2&gt;
-
-&lt;p&gt;&amp;hellip;&lt;/p&gt;
+      <guid>/tutorial/</guid>
+      <description>&lt;p&gt;This feature can be used for publishing content such as:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Project or software documentation&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Online courses&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Tutorials&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The parent folder may be renamed, for example, to &lt;code&gt;docs&lt;/code&gt; for project documentation or &lt;code&gt;course&lt;/code&gt; for creating an online course.&lt;/p&gt;
+&lt;p&gt;To disable this feature, either delete the parent folder, or set &lt;code&gt;draft = true&lt;/code&gt; in the front matter of all its pages.&lt;/p&gt;
+&lt;p&gt;After renaming or deleting the parent folder, you may wish to update any &lt;code&gt;[[menu.main]]&lt;/code&gt; menu links to it in the &lt;code&gt;config.toml&lt;/code&gt;.&lt;/p&gt;
 </description>
     </item>
     
@@ -545,175 +64,29 @@ control &amp;lt;- d %&amp;gt;%
     </item>
     
     <item>
-      <title>Can individual cognitive abilities direct audiology treatment?</title>
-      <link>/publication/audiologytoday2017/</link>
-      <pubDate>Wed, 01 Mar 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/publication/audiologytoday2017/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Enhancing transparency and reproducibility of hearing science</title>
-      <link>/post/enhancing-transparency-and-reproducibility-of-hearing-science/</link>
-      <pubDate>Wed, 22 Feb 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/post/enhancing-transparency-and-reproducibility-of-hearing-science/</guid>
-      <description>
-
-
-&lt;p&gt;This work was presented as a poster at the American Auditory Society’s Annual Scientific and Technology Conference, 2-4 March 2017, Scottsdale, AZ. You can download a copy of the poster &lt;a href=&#34;../transparancy/Schoof%20AAS%202017%20poster.pdf&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;The National Institutes of Health have recently undertaken steps to enhance rigor and reproducibility of biomedical research. For example, grant applications are now required to explicitly address how the proposed research will achieve robust and unbiased results. Reproducibility is an integral part of science as it allows for research findings to be either validated or refuted and lets scientists successfully build upon previous research. Only when multiple studies, conducted by different scientists, demonstrate similar results can we obtain a reasonable approximation of how the world works. In this blog post I will review some useful tools and discuss some good practices that support transparency and reproducibility.&lt;/p&gt;
-&lt;p&gt;To ensure the reproducibility of your research, you just need to follow these &lt;strong&gt;five simple rules&lt;/strong&gt;:&lt;/p&gt;
-&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
-&lt;li&gt;Pre-register your study&lt;/li&gt;
-&lt;li&gt;Document everything you do&lt;/li&gt;
-&lt;li&gt;Don’t do anything by hand, script everything&lt;/li&gt;
-&lt;li&gt;Use a version control system&lt;/li&gt;
-&lt;li&gt;Provide open access to all publications, scripts, and data&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Following these five rules will not only help other researchers validate or refute your findings, it will also make your research less error-prone, enhance your efficiency and productivity, and make your collaborations more effective. Moreover, it sends a clear signal of transparency and trustworthiness.&lt;/p&gt;
-&lt;p&gt;So how should we go about following these rules? In the sections below I will discuss some good practices and provide some useful tools that will help enhance the transparency and reproducibility of your research. I will also point you to some useful training resources.&lt;/p&gt;
-&lt;div id=&#34;pre-register-your-study&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Pre-register your study&lt;/h3&gt;
-&lt;p&gt;A few years ago, a group of scientists wrote an &lt;a href=&#34;https://www.theguardian.com/science/blog/2013/jun/05/trust-in-science-study-pre-registration&#34;&gt;open letter&lt;/a&gt; to the Guardian newspaper advocating for study pre-registration in scientific publishing. The idea is that your study design and analysis details are peer reviewed before you start data collection. This helps distinguish exploratory from confirmatory analyses, guards against p-hacking or cherry-picking of data and analyses, and overcomes publication bias.&lt;/p&gt;
-&lt;p&gt;For a list of journals that currently offer pre-registration, have a look &lt;a href=&#34;https://cos.io/our-services/prereg-more-information/&#34;&gt;here&lt;/a&gt;. Most hearing science journals do not yet offer pre-registration. Let’s convince them!&lt;/p&gt;
-&lt;p&gt;Even if your journal of choice does not give you the option to submit your study design and analysis plan for peer review, you can still create a registered report via:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://cos.io/rr/&#34;&gt;Center for Open Science&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://aspredicted.org/&#34;&gt;AsPredicted&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;ClinicalTrials.gov&#34; class=&#34;uri&#34;&gt;ClinicalTrials.gov&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div id=&#34;document-document-document&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Document, document, document&lt;/h3&gt;
-&lt;p&gt;It is incredibly important to carefully document every step of the research process. Keep track of precisely why, when, and how you conducted your research. Instead of using a paper notebook or a collection of word documents, use an electronic lab notebook. This allows you to store all your research output in one place, access your notebook wherever you are, search entries, and share your notes with your collaborators.&lt;/p&gt;
-&lt;p&gt;There are a bunch of different electronic lab notebooks out there. Some are free, others are quite costly. Some allow you to store large volumes of data, others are more basic. Find one that best suits your needs. Some electronic lab notebooks that may be worth exploring (in no particular order) are:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://cos.io/our-products/osf/&#34;&gt;Open Science Framework&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://slack.com/&#34;&gt;Slack&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://scinote.net/&#34;&gt;SciNote&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://products.office.com/en-gb/onenote/digital-note-taking-app?rtc=1&#34;&gt;Microsoft OneNote&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://evernote.com/&#34;&gt;Evernote&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.labii.com/&#34;&gt;Labii&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.labarchives.com/&#34;&gt;LabArchives&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.elabjournal.com/&#34;&gt;eLabJournal&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.labguru.com/&#34;&gt;LabGuru&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;It is also incredibly important to provide detailed documentation for your scripts and your data. If either you or someone else ever wants to re-use it, they’ll need all the help they can get to make sense of your scripts and data files.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;avoid-manual-data-processing&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Avoid manual data processing&lt;/h3&gt;
-&lt;p&gt;In order for research to be fully reproducible, you have to script absolutely everything. If you manipulate your data by hand at any point, it is difficult to replicate exactly what you did at a later stage. And it may be practically impossible for anyone else to reproduce your results.&lt;/p&gt;
-&lt;p&gt;Use R (instead of SPSS) for your statistical analyses. You can download both &lt;a href=&#34;https://cran.r-project.org/&#34;&gt;R&lt;/a&gt; and &lt;a href=&#34;https://www.rstudio.com/products/rstudio/#Desktop&#34;&gt;RStudio&lt;/a&gt; - a graphical user interface for R - for free. Software Carpentry offers a short &lt;a href=&#34;http://swcarpentry.github.io/shell-novice/&#34;&gt;course&lt;/a&gt; that walks you through the basics of Bash. Interested in learning Python? There are a lot of courses and books out there, such as &lt;a href=&#34;https://learnpythonthehardway.org/book/&#34;&gt;Learn Python the hard way&lt;/a&gt; or MIT’s &lt;a href=&#34;https://www.edx.org/course/introduction-to-computer-science-and-programming-using-python-0#.UzMf-K2wJr4&#34;&gt;Introduction to computer science and programming using Python&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;In general, some great websites that provide online programming courses are:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.coursera.org/&#34;&gt;Coursera&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://software-carpentry.org/lessons/&#34;&gt;Software Carpentry&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.edx.org/&#34;&gt;edX&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.lynda.com/&#34;&gt;Lynda&lt;/a&gt; (check if your university has a subscription)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Feeling tired just thinking about the idea of having to spend hours working your way through an online course? The best way to learn is just to get your hands dirty. So for your next data analysis, just open up RStudio, or the Bash Shell and figure things out as you go along. As always, Google is your friend, as is &lt;a href=&#34;https://stackoverflow.com/&#34;&gt;stackoverflow&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;automatically-embed-stats-in-your-manuscripts&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Automatically embed stats in your manuscripts&lt;/h3&gt;
-&lt;p&gt;The next step in making your research reproducible, is to integrate your data, code, and manuscript. That way you can trace back the results you report in your paper to the underlying code and data. Automatically embedding your statistical output in your manuscripts will avoid the risk of any copy-paste errors when reporting your results. Another advantage is that you can automatically update your graphs and statistics after you have re-analysed your data.&lt;/p&gt;
-&lt;p&gt;There are some nifty solutions out there to automatically embed statistical output in your manuscripts. For example, if you are a Microsoft Word user, you can download &lt;a href=&#34;https://sites.northwestern.edu/stattag/&#34;&gt;StatTag&lt;/a&gt;, a free plug-in that allows you to embed statistics, tables, and figures into Word and update your results with one button press. Alternatively, you can write dynamic documents directly from RStudio, using &lt;a href=&#34;https://rmarkdown.rstudio.com/&#34;&gt;R Markdown&lt;/a&gt; (which in turn uses the &lt;a href=&#34;https://yihui.name/knitr/&#34;&gt;knitr&lt;/a&gt; and &lt;a href=&#34;http://pandoc.org/&#34;&gt;pandoc&lt;/a&gt; R packages). Have a look at some of the things that are possible with R Markdown &lt;a href=&#34;https://rmarkdown.rstudio.com/gallery.html&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Getting started with R Markdown is fairly straightforward. Here are some useful resources to help you get started:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;swcarpentry.github.io/r-novice-gapminder/15-knitr-markdown&#34; class=&#34;uri&#34;&gt;swcarpentry.github.io/r-novice-gapminder/15-knitr-markdown&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;www.coursera.org/learn/reproducible-research&#34; class=&#34;uri&#34;&gt;www.coursera.org/learn/reproducible-research&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf&#34;&gt;R Markdown cheat sheet&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Formatting is of course very important when preparing manuscripts for publication. Instead of using Microsoft Word, you could use &lt;a href=&#34;https://www.latex-project.org/&#34;&gt;LaTeX&lt;/a&gt; and integrate your statistical output using &lt;a href=&#34;https://support.rstudio.com/hc/en-us/articles/200552056-Using-Sweave-and-knitr&#34;&gt;Sweave and knitr&lt;/a&gt;. However, even if you’re not a LaTeX user, you can prepare nicely formatted manuscripts in RStudio. For information, have a look at this &lt;a href=&#34;http://galahad.well.ox.ac.uk/repro/#preparing-manuscripts-for-publication&#34;&gt;tutorial&lt;/a&gt; and consider using the &lt;a href=&#34;https://cran.r-project.org/web/packages/rticles/rticles.pdf&#34;&gt;rticles&lt;/a&gt; R package.&lt;/p&gt;
-&lt;p&gt;In addition to generating reports and manuscripts, it is possible to create interactive web applications in RStudio using &lt;a href=&#34;http://shiny.rstudio.com/&#34;&gt;shiny&lt;/a&gt;. You can show your data on the web and allow people to play with a set of parameters to see what effect they have on your results. For some fancy examples, have a look at this &lt;a href=&#34;https://www.rstudio.com/products/shiny/shiny-user-showcase/&#34;&gt;showcase&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;use-a-version-control-system&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Use a version control system&lt;/h3&gt;
-&lt;p&gt;Have you ever had multiple versions of a certain file floating around on your computer, having forgotten which version was the ‘right’ one? This can be particularly problematic if months or years down the line someone asks if you’d be happy to share the code you used in your paper. The solution to this issue is to use a version control system, such as &lt;a href=&#34;https://git-scm.com/&#34;&gt;Git&lt;/a&gt;. You can use it to keep track of changes in your documents and scripts by storing revisions of your files in a centralized repository. Using a version control system you can easily compare, restore, and merge different versions of files. What is particularly nice is that you can undo changes you made to a given script and its dependent files simultaneously. Rather than having to try to remember which files were changed in conjunction with one another, you can undo the changes to these files all at once.&lt;/p&gt;
-&lt;p&gt;To start using Git as your version control system, you need to do two things:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Install &lt;a href=&#34;https://git-scm.com/downloads&#34;&gt;Git&lt;/a&gt; on your computer&lt;/li&gt;
-&lt;li&gt;Create an account with &lt;a href=&#34;https://github.com/&#34;&gt;GitHub&lt;/a&gt; or &lt;a href=&#34;https://about.gitlab.com/&#34;&gt;GitLab&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Git itself serves as the local version control system on your computer. GitHub and GitLab provide centralized repositories where you can manage and share your files with your collaborators or the world.&lt;/p&gt;
-&lt;p&gt;Repositories on GitHub are in principle public, which means that anyone can look at and download your code (people can’t make changes to your code unless they have your permission). If you are not ready to share your work, you can make your repository private. Usually you have to pay to host private repositories on GitHub. However, if you have a university email address, you can request an &lt;a href=&#34;https://education.github.com/pack&#34;&gt;educational discount&lt;/a&gt; and have as many private repositories as you want, for free. Instead of using GitHub, you can also create an account with GitLab. You can have an unlimited number of private repositories on their site.&lt;/p&gt;
-&lt;p&gt;There is a bit of a learning curve to getting started with Git, but it is well worth it! Here are some useful resources to get you on your way:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://swcarpentry.github.io/git-novice/&#34;&gt;Software Carpentry intro to Git&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://git-scm.com/doc&#34;&gt;Git documentation&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://guides.github.com/&#34;&gt;GitHub user guides&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div id=&#34;publish-open-access&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Publish open access&lt;/h3&gt;
-&lt;p&gt;There has been a recent push for open access publishing. An increasing number of funding agencies, such as the NIH, the Research Councils UK, and the Wellcome Trust have established policies for open access publishing.&lt;/p&gt;
-&lt;p&gt;There are many advantages to making your publications publicly available. It drives innovation on a global scale, gives clinicians access to the latest research findings, and gives you increased visibility and citations. For an excellent overview of why open access publishing is so important, have a look at this &lt;a href=&#34;http://phdcomics.com/comics.php?f=1533&#34;&gt;video&lt;/a&gt; rom “Piled Higher and Deeper”, by Jorge Cham (phdcomics.com).&lt;/p&gt;
-&lt;p&gt;There are a few different options to provide open access to your publications.&lt;/p&gt;
-&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
-&lt;li&gt;Pay an article processing charge&lt;/li&gt;
-&lt;li&gt;Deposit paper in an open access repository after an embargo period&lt;/li&gt;
-&lt;li&gt;Submit the post-print version of the paper to an online repository&lt;/li&gt;
-&lt;li&gt;Post PDFs of your publications on your personal website&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-&lt;div id=&#34;provide-open-access-to-your-scripts&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Provide open access to your scripts&lt;/h3&gt;
-&lt;p&gt;And important part of enhancing the transparency and reproducibility of your research is to share your code, along with some (example) data and documentation. This enables others to exactly replicate your analyses. Your code can then also be used in future research. It may even lead to some citations!&lt;/p&gt;
-&lt;p&gt;You can of course share your code and supporting documents as a bunch of individual files. However, a nice way to distribute your code is to create an R package to go along with your publication. Everything will be nicely packaged up together. All people need to do is install your package and they can play with your code and data in R. You can create an R package in RStudio using the devtools package. For some more information on how to go about it, have a look at this &lt;a href=&#34;https://cran.r-project.org/doc/contrib/Leisch-CreatingPackages.pdf&#34;&gt;tutorial&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;If you’re using a version control system, like GitHub, the easiest way to share your scripts or R package is to link to your GitHub repository in your publication. You can even make your repository citable by assigning it a doi. You can learn more about how to do that &lt;a href=&#34;https://guides.github.com/activities/citable-code/&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;It might even be worth writing a paper specifically about your analysis methods and code in journals, such as:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://openresearchsoftware.metajnl.com/&#34;&gt;Journal of Open Research Software&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://joss.theoj.org/&#34;&gt;The Journal of Open Source Software&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://journal.r-project.org/&#34;&gt;The R Journal&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div id=&#34;provide-open-access-to-your-data&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Provide open access to your data&lt;/h3&gt;
-&lt;p&gt;Last but not least, in addition to making your publications and code open access, it is important to provide open access to your de-identified data. This enhances the transparency of your research, helps preserve your data for the future, and enables reuse (including meta-analysis) of your data. It is of course important to keep HIPAA compliance and any intellectual property rights in mind when deciding how to go about sharing your data.&lt;/p&gt;
-&lt;p&gt;When you archive your data, it is important to include detailed documentation so that you and others can make sense of all the different parts of your data set. In a few months or years, it is quite likely that you won’t remember what all the different fields in your excel file refer to.&lt;/p&gt;
-&lt;p&gt;Deposit your data and documentation in an online repository, such as:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://dataverse.org/&#34;&gt;Harvard Data Verse&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://figshare.com/&#34;&gt;figshare&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://datadryad.org/&#34;&gt;Dryad Digital Repository&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://osf.io/&#34;&gt;Open Science Framework&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://datproject.org/&#34;&gt;Dat Project&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;A repository hosted by your institution, funder, or journal&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;font size=&#34;2&#34;&gt;Acknowledgments: Many thanks to Pamela Souza for making this work possible. Thanks to José Joaquín Atria and Sriram Boothalingam for inspiring discussions on the topic. Work supported by NIH. &lt;/font&gt;&lt;/p&gt;
-&lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Consequences of hidden hearing loss</title>
-      <link>/project/hhl/</link>
+      <title>Projects</title>
+      <link>/project/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0100</pubDate>
       
-      <guid>/project/hhl/</guid>
-      <description>&lt;p&gt;My postdoctoral work at UCL looks at the potential implications of hidden hearing loss. Hidden hearing loss, or cochlear synaptopathy, refers to damage to the synapses connecting the inner hair cells in the cochlea to the auditory nerve. Crucially, this type of damage does not necessarily result in any changes in audiometric thresholds. Animal studies have shown that this damage can arise as a consequence of noise exposure or ageing. While evidence for hidden hearing loss in humans is emerging, it remains challenging to measure non-invasively. In addition, its consequences for auditory processing remain unclear. In particular, we are investigating the effects of hidden hearing loss on auditory temporal processing and speech perception in noise.&lt;/p&gt;
-
-&lt;p&gt;I am also working on a project with &lt;a href=&#34;https://csd.wisc.edu/staff/boothalingam-sriram/&#34; target=&#34;_blank&#34;&gt;Dr Sriram Boothalingam&lt;/a&gt; at the University of Wisconsin-Madison examining whether the auditory efferent system may play a protective role against hidden hearing loss.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>The role of age-related declines in subcortical auditory processing in speech perception in noise</title>
-      <link>/publication/jaro2016/</link>
-      <pubDate>Sat, 01 Oct 2016 00:00:00 +0100</pubDate>
-      
-      <guid>/publication/jaro2016/</guid>
+      <guid>/project/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>High sentence predictability increases the fluctuating masker benefit</title>
-      <link>/publication/jasa-el2015/</link>
-      <pubDate>Tue, 01 Sep 2015 00:00:00 +0100</pubDate>
+      <title>Authors</title>
+      <link>/author/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/publication/jasa-el2015/</guid>
+      <guid>/author/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Slides</title>
+      <link>/slides/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/slides/</guid>
       <description></description>
     </item>
     
