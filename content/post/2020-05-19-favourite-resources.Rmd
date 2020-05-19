@@ -21,7 +21,7 @@ In no particular order, here are some of my favourite books for learning statist
 #### Hadley Wickham, Garret Grolemund
 
 <div style= "float:left;position: relative; top: 5px; padding-right:10px">
-![](resources/r4ds.png){width=150px}
+![](r4ds.png){width=150px}
 </div>
 
 If I were to get started with R today, I would like to think I'd use *R for Data Science* to learn how to analyse and visualise my data.
@@ -36,7 +36,7 @@ There is no better way than learning R than by actually using it. When I first s
 #### Richard McElreath
 
 <div style= "float:left;position: relative; top: 5px; padding-right:10px">
-![](resources/rethinking.png){width=150px}
+![](rethinking.png){width=150px}
 </div>
 
 Getting to grips with Bayesian statistics had been on my to do list for a while and I explored different resources before finally landing on this fantastic book after several people (rightfully) recommended it to me. I think [*Statistical Rethinking*](https://xcelab.net/rm/statistical-rethinking/) is probably one of the best statistics books I have ever read! 
@@ -51,7 +51,7 @@ The course materials, including weekly homework assignments, are available on [G
 #### Gareth James, Daniela Witten, Trevor Hastie, Robert Tibshirani
 
 <div style= "float:left;position: relative; top: 5px; padding-right:10px">
-![](resources/ISL.jpg){width=150px}
+![](ISL.jpg){width=150px}
 </div>
 
 This book is another gem! *An Introduction to Statistical Learning* provides a great theoretical and practical introduction to machine learning and is [freely available online](http://faculty.marshall.usc.edu/gareth-james/ISL/ISLR%20Seventh%20Printing.pdf). The book largely focuses on supervised learning methods such as regression and classification, but also has a chapter on unsupervised learning . 
